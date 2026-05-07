@@ -1,0 +1,106 @@
+.footer {
+  padding: 6rem 0 3rem;
+  background: var(--background);
+  border-top: 1px solid var(--secondary);
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5rem;
+}
+
+.brand {
+  max-width: 300px;
+}
+
+.logo {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: var(--foreground);
+  text-decoration: none;
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.logoImage {
+  width: 120px;
+  height: auto;
+  max-width: 100%;
+}
+
+.accent {
+  color: var(--primary);
+}
+
+.links {
+  display: flex;
+  gap: 6rem;
+}
+
+.linkGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.linkGroup a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.linkGroup a:hover {
+  color: var(--primary);
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 3rem;
+  border-top: 1px solid var(--secondary);
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.legal {
+  display: flex;
+  gap: 2rem;
+}
+
+.legal a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.legal a:hover {
+  color: var(--foreground);
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 4rem 0 2rem;
+  }
+  .top {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  
+  .links {
+    gap: 2rem;
+    flex-direction: column;
+  }
+  
+  .bottom {
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+  }
+  
+  .legal {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}

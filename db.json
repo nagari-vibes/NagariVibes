@@ -1,0 +1,58 @@
+{
+  "projects": [
+    {
+      "id": "1",
+      "title": "Neon Nights Campaign",
+      "category": "Video Production",
+      "imageUrl": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop",
+      "link": "/projects/neon-nights-campaign-1",
+      "description": "A high-octane visual campaign designed to capture the vibrant, relentless energy of city nightlife. We orchestrated a full-scale video production featuring dynamic drone cinematography and neon-drenched color grading, resulting in a viral 60-second spot that doubled online engagement.",
+      "featured": true,
+      "createdAt": "2026-05-06T10:00:00Z"
+    },
+    {
+      "id": "2",
+      "title": "Apex Brand Identity",
+      "category": "Brand Architecture",
+      "imageUrl": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop",
+      "link": "/projects/apex-brand-identity-2",
+      "description": "A complete architectural overhaul of a legacy corporate brand. We stripped away the outdated elements and engineered a stark, tactical, and minimalist visual system that commands authority and positions Apex as an undisputed leader in their sector.",
+      "featured": true,
+      "createdAt": "2026-05-06T11:00:00Z"
+    },
+    {
+      "id": "3",
+      "title": "Synthwave E-Commerce",
+      "category": "Web Development",
+      "imageUrl": "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=2064&auto=format&fit=crop",
+      "link": "/projects/synthwave-e-commerce-3",
+      "description": "A high-performance digital storefront built from the ground up for speed and aesthetics. Blending retro-futuristic UI elements with cutting-edge backend infrastructure, we delivered a seamless shopping experience that increased conversion rates by 45%.",
+      "featured": true,
+      "createdAt": "2026-05-06T12:00:00Z"
+    },
+    {
+      "id": "4",
+      "title": "Urban Flow Socials",
+      "category": "Social Media Strategy",
+      "imageUrl": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=2148&auto=format&fit=crop",
+      "link": "/projects/urban-flow-socials-4",
+      "description": "An aggressive, hyper-targeted social media strategy focusing on authentic street culture. By deploying rapid-fire short-form content and leveraging influencer networks, we transformed a stagnant social presence into a highly active community of loyal brand advocates.",
+      "featured": true,
+      "createdAt": "2026-05-06T13:00:00Z"
+    }
+  ],
+  "settings": {
+    "siteName": "Nagari Vibes",
+    "contactEmail": "hello@nagarivibes.com"
+  },
+  "competitionEntries": [
+    {
+      "id": "1778181987904",
+      "createdAt": "2026-05-07T19:26:27.904Z",
+      "name": "Tejas Adgatla",
+      "handle": "jeiigopi",
+      "email": "hgwoiregwrugnwugbq@uwoihfe.doifiwf",
+      "videoUrl": "https://res.cloudinary.com/dwt9q2xsq/video/upload/v1778181986/ger2smotav4altrw3rdj.mkv"
+    }
+  ]
+}

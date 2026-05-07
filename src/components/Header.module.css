@@ -1,0 +1,123 @@
+.header {
+  position: fixed;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1200px;
+  z-index: 1000;
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  background: rgba(5, 5, 5, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scrolled {
+  background: rgba(5, 5, 5, 0.75);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: var(--foreground);
+  text-decoration: none;
+  letter-spacing: -0.05em;
+  display: flex;
+  align-items: center;
+}
+
+.logoImage {
+  width: 90px;
+  height: auto;
+  max-width: 100%;
+}
+
+.accent {
+  color: var(--primary);
+}
+
+.nav {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.nav a:hover {
+  color: var(--primary);
+}
+
+.cta {
+  background: var(--primary);
+  color: var(--background) !important;
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  font-weight: 700 !important;
+  font-size: 0.8rem !important;
+  transition: all 0.3s ease !important;
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px var(--primary-glow);
+  background: var(--accent);
+}
+
+.menuButton {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--foreground);
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menuButton {
+    display: block;
+  }
+
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    height: 100vh;
+    background: var(--background);
+    flex-direction: column;
+    justify-content: center;
+    transition: 0.4s ease;
+    border-left: 1px solid var(--secondary);
+  }
+
+  .nav.open {
+    right: 0;
+  }
+}
+
+@media (max-width: 992px) and (min-width: 769px) {
+  .nav {
+    gap: 1.5rem;
+  }
+}
+
