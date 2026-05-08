@@ -21,7 +21,7 @@ export default async function Projects() {
         </div>
 
         <div className={styles.grid}>
-          {projects.map((project) => (
+          {projects.map((project: any) => (
             <div key={project.id} className={styles.card}>
               <div className={styles.imageWrapper}>
                 <Image 
