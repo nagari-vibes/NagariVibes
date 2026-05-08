@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Rajdhani, Inter, Azeret_Mono } from "next/font/google";
 import "./globals.css";
 
