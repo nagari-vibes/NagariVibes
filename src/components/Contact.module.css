@@ -81,7 +81,7 @@
   color: var(--background);
   border: none;
   padding: 1.2rem;
-  font-family: 'Rajdhani', sans-serif;
+  font-family: var(--font-rajdhani), sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   cursor: pointer;

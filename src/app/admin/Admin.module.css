@@ -51,7 +51,7 @@
   border: none;
   color: var(--muted);
   padding: 0.5rem 1.5rem;
-  font-family: 'Rajdhani', sans-serif;
+  font-family: var(--font-rajdhani), sans-serif;
   font-weight: 600;
   text-transform: uppercase;
   cursor: pointer;
@@ -164,7 +164,7 @@
 .excelTable th {
   text-align: left;
   padding: 1rem 1.5rem;
-  font-family: 'Rajdhani', sans-serif;
+  font-family: var(--font-rajdhani), sans-serif;
   text-transform: uppercase;
   color: var(--muted);
   border-bottom: 1px solid var(--glass-border);
