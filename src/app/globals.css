@@ -12,6 +12,11 @@
   --glass-border: rgba(255, 255, 255, 0.1);
   --selection-bg: #D4AF37;
   --selection-text: #050505;
+  
+  /* Font Variables for FontSource */
+  --font-rajdhani: "Rajdhani";
+  --font-inter: "Inter";
+  --font-azeret-mono: "Azeret Mono";
 }
 
 ::selection {

@@ -1,22 +1,13 @@
 import type { Metadata } from "next";
-import { Rajdhani, Inter, Azeret_Mono } from "next/font/google";
 import "./globals.css";
 
-const rajdhani = Rajdhani({
-  subsets: ["latin"],
-  weight: ["500", "600", "700"],
-  variable: "--font-rajdhani",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-});
-
-const azeretMono = Azeret_Mono({
-  subsets: ["latin"],
-  variable: "--font-azeret-mono",
-});
+// Import FontSource fonts to fix Google CDN metadata bugs
+import "@fontsource/rajdhani/500.css";
+import "@fontsource/rajdhani/600.css";
+import "@fontsource/rajdhani/700.css";
+import "@fontsource/inter/400.css";
+import "@fontsource/inter/600.css";
+import "@fontsource/azeret-mono/300.css";
 
 export const metadata: Metadata = {
   title: "Nagari Vibes | Premium Digital Agency",
@@ -30,8 +21,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${rajdhani.variable} ${inter.variable} ${azeretMono.variable}`}>
-      <body className={inter.className}>
+    <html lang="en">
+      <body>
         {children}
       </body>
     </html>
