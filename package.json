@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint"
   },
+  "dependencies": {
     "@fontsource/azeret-mono": "^5.1.0",
     "@fontsource/inter": "^5.1.0",
     "@fontsource/rajdhani": "^5.1.0",
