@@ -10,9 +10,34 @@ import "@fontsource/inter/600.css";
 import "@fontsource/azeret-mono/300.css";
 
 export const metadata: Metadata = {
-  title: "Nagari Vibes | Premium Digital Agency",
-  description: "Elevating digital presence with tactical strategy and premium design. Based in Ahilyanagar.",
-  keywords: ["Digital Agency", "Ahilyanagar", "Branding", "Content Strategy", "Promotional Reels"],
+  title: {
+    default: "Nagari Vibes | Premium Digital Agency & Content Strategy",
+    template: "%s | Nagari Vibes"
+  },
+  description: "Elevating digital presence with tactical strategy and premium design. We blend content strategy with high-end production to build authority and drive conversions.",
+  keywords: ["Digital Agency", "Ahilyanagar", "Branding", "Content Strategy", "Promotional Reels", "Nagari Vibes"],
+  openGraph: {
+    title: "Nagari Vibes | Premium Digital Agency",
+    description: "Tactical strategy and premium design. We turn attention into authority.",
+    url: "https://nagari-vibes.onrender.com",
+    siteName: "Nagari Vibes",
+    images: [
+      {
+        url: "/logo-full.png",
+        width: 1200,
+        height: 630,
+        alt: "Nagari Vibes Logo",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Nagari Vibes | Premium Digital Agency",
+    description: "Tactical strategy and premium design.",
+    images: ["/logo-full.png"],
+  },
 };
 
 export default function RootLayout({
