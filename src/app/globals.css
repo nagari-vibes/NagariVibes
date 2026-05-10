@@ -14,9 +14,9 @@
   --selection-text: #050505;
   
   /* Font Variables for FontSource */
-  --font-rajdhani: "Rajdhani";
-  --font-inter: "Inter";
-  --font-azeret-mono: "Azeret Mono";
+  --font-heading: "Plus Jakarta Sans", sans-serif;
+  --font-inter: "Inter", sans-serif;
+  --font-azeret-mono: "Azeret Mono", monospace;
 }
 
 ::selection {
@@ -48,7 +48,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-rajdhani), sans-serif;
+  font-family: var(--font-heading);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: -0.02em;

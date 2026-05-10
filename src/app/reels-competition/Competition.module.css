@@ -55,7 +55,7 @@
 
 .inputGroup label {
   font-weight: 600;
-  font-family: var(--font-rajdhani), sans-serif;
+  font-family: var(--font-heading);
   text-transform: uppercase;
   color: var(--muted);
   letter-spacing: 1px;
@@ -142,7 +142,7 @@
   border: none;
   padding: 1.2rem;
   border-radius: 4px;
-  font-family: var(--font-rajdhani), sans-serif;
+  font-family: var(--font-heading);
   font-weight: 700;
   font-size: 1.2rem;
   text-transform: uppercase;

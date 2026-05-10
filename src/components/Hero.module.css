@@ -63,7 +63,7 @@
   color: var(--background);
   border: none;
   padding: 1rem 2rem;
-  font-family: var(--font-rajdhani), sans-serif;
+  font-family: var(--font-heading);
   font-weight: 700;
   text-transform: uppercase;
   cursor: pointer;
@@ -82,7 +82,7 @@
   color: var(--foreground);
   border: 1px solid var(--secondary);
   padding: 1rem 2rem;
-  font-family: var(--font-rajdhani), sans-serif;
+  font-family: var(--font-heading);
   font-weight: 700;
   text-transform: uppercase;
   cursor: pointer;
