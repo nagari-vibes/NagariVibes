@@ -22,7 +22,7 @@ export default function Header() {
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
       <div className={`container ${styles.container}`}>
         <Link href="/" className={styles.logo}>
-          <Image src="/logo-full.png" alt="Nagari Vibes" width={160} height={77} className={styles.logoImage} priority />
+          <Image src="/logos/vibes-media.png" alt="Vibes Media" width={200} height={80} className={styles.logoImage} priority />
         </Link>
 
         <nav className={`${styles.nav} ${isOpen ? styles.open : ''}`}>

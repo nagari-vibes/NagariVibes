@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     siteName: "Nagari Vibes",
     images: [
       {
-        url: "https://nagarivibes.synthory.space/logo-full.png",
+        url: "https://nagarivibes.synthory.space/logos/vibes-media.png",
         width: 1200,
         height: 630,
         alt: "Nagari Vibes Logo",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Nagari Vibes | Premium Digital Agency",
     description: "Tactical strategy and premium design.",
-    images: ["https://nagarivibes.synthory.space/logo-full.png"],
+    images: ["https://nagarivibes.synthory.space/logos/vibes-media.png"],
   },
 };
 

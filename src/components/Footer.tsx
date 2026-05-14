@@ -10,7 +10,7 @@ export default function Footer() {
         <div className={styles.top}>
           <div className={styles.brand}>
             <Link href="/" className={styles.logo}>
-              <Image src="/logo-full.png" alt="Nagari Vibes" width={140} height={67} className={styles.logoImage} />
+              <Image src="/logos/vibes-media.png" alt="Vibes Media" width={160} height={60} className={styles.logoImage} />
             </Link>
             <p>Premium digital agency based in Ahilyanagar. We create vibes that matter.</p>
           </div>
