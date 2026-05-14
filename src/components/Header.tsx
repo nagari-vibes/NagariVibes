@@ -9,6 +9,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Header() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   const subBrands = [
