@@ -25,6 +25,29 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 100%;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.drawerButton {
+  background: transparent;
+  border: none;
+  color: var(--primary);
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.drawerButton:hover {
+  transform: scale(1.1);
 }
 
 .logo {
@@ -36,6 +59,7 @@
   letter-spacing: -0.05em;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .logoImage {
@@ -92,6 +116,120 @@
   cursor: pointer;
 }
 
+.drawerOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  z-index: 100;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 350px;
+  height: 100vh;
+  background: #080808;
+  border-right: 1px solid var(--glass-border);
+  z-index: 101;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.drawerHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.drawerHeader span {
+  color: var(--primary);
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.closeDrawer {
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.closeDrawer:hover {
+  color: #fff;
+}
+
+.drawerHint {
+  color: var(--muted);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+}
+
+.brandList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.brandLink {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid transparent;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.brandLink:hover {
+  background: rgba(212, 175, 55, 0.05);
+  border-color: var(--primary-glow);
+  transform: translateX(10px);
+}
+
+.brandIconWrapper {
+  width: 50px;
+  height: 50px;
+  background: #000;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+
+.brandIconWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.brandName {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.drawerFooter {
+  margin-top: auto;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
 @media (max-width: 768px) {
   .menuButton {
     display: block;
@@ -112,6 +250,10 @@
 
   .nav.open {
     right: 0;
+  }
+
+  .drawer {
+    width: 85%;
   }
 }
 
