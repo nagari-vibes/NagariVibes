@@ -95,18 +95,29 @@
 
 @media (max-width: 768px) {
   .brands {
-    padding: 6rem 0;
+    padding: 3rem 0;
+  }
+  .headerCentered {
+    margin-bottom: 2.5rem;
+  }
+  .sectionTitle {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  .sectionSubtitle {
+    font-size: 0.9rem;
+    padding: 0 1rem;
   }
   .brandName {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     letter-spacing: -1px;
   }
   .tapeWrapper {
-    width: 150%;
-    transform: rotate(-4deg);
-    padding: 1rem 0;
+    width: 130%;
+    transform: rotate(-3deg);
+    padding: 0.8rem 0;
   }
   .separator {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 }
