@@ -13,9 +13,9 @@ async function saveDb(data: any) {
   await fs.writeFile(dbPath, JSON.stringify(data, null, 2), 'utf8');
 }
 
-export async function PUT(request: Request, { params }: { params: { id: string } }) {
+export async function PUT(request: Request, { params }: { params: Promise<{ id: string }> }) {
   try {
-    const { id } = params;
+    const { id } = await params;
     const body = await request.json();
     const db = await getDb();
     
