@@ -1,47 +1,63 @@
 .brands {
-  padding: 4rem 0;
+  padding: 6rem 0;
   background-color: #050505;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  overflow: hidden;
 }
 
 .brandTicker {
-  text-align: center;
+  width: 100%;
 }
 
 .brandTicker p {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   color: var(--muted);
-  letter-spacing: 2px;
-  font-size: 0.75rem;
+  letter-spacing: 4px;
+  font-size: 0.7rem;
+  font-family: var(--font-azeret-mono);
+  opacity: 0.6;
 }
 
-.brandList {
+.marqueeContainer {
+  position: relative;
+  width: 100%;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 3rem;
-  margin-top: 2rem;
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+.marquee {
+  display: flex;
+  gap: 6rem;
+  white-space: nowrap;
+  padding-right: 6rem;
 }
 
 .brandName {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
-  color: #444;
-  transition: color 0.3s ease;
-  white-space: nowrap;
+  font-size: 2.5rem;
+  color: #1a1a1a;
+  transition: all 0.4s ease;
+  cursor: default;
+  text-transform: uppercase;
+  letter-spacing: -1px;
 }
 
 .brandName:hover {
   color: var(--primary);
-  transform: translateY(-2px);
+  transform: scale(1.1);
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
 }
 
 @media (max-width: 768px) {
-  .brandList {
-    gap: 1.5rem;
+  .brands {
+    padding: 4rem 0;
   }
   .brandName {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
+  }
+  .marquee {
+    gap: 3rem;
   }
 }
