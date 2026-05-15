@@ -120,131 +120,143 @@ export default function ReelsCompetition() {
     <main className={styles.main}>
       <Header />
       
-      <div className={styles.hero}>
-        <div className="container">
-          <h1 className={styles.title}>NAGARI VIBES <span className={styles.accent}>REELS CLASH</span></h1>
-          <p className={styles.subtitle}>Submit your hardest hitting reel. Max file size: 100MB.</p>
+      <div className={styles.splitLayout}>
+        <div className={styles.promoImageWrapper}>
+          <img 
+            src="/reels-competition.jpeg" 
+            alt="Nagari Vibes Reels Competition" 
+            className={styles.promoImage} 
+          />
         </div>
-      </div>
 
-      <div className={`container ${styles.formContainer}`}>
-        {isSuccess ? (
-          <div className={styles.successState}>
-            <CheckCircle size={64} className={styles.successIcon} />
-            <h2>SUBMISSION SECURED</h2>
-            <p>Your reel has been uploaded to our servers. We will contact you via email or Instagram if you are selected.</p>
-            <button className={styles.btn} onClick={() => {
-              setIsSuccess(false);
-              setFile(null);
-              setFormData({ name: '', handle: '', email: '', phone: '' });
-              setProgress(0);
-            }}>Submit Another Entry</button>
+        <div className={styles.contentSide}>
+          <div className={styles.hero}>
+            <div className="container">
+              <h1 className={styles.title}>NAGARI VIBES <span className={styles.accent}>REELS CLASH</span></h1>
+              <p className={styles.subtitle}>Submit your hardest hitting reel. Max file size: 100MB.</p>
+            </div>
           </div>
-        ) : (
-          <form className={styles.form} onSubmit={handleSubmit}>
-            {error && (
-              <div className={styles.errorBox}>
-                <AlertCircle size={20} />
-                <span>{error}</span>
-              </div>
-            )}
-            
-            <div className={styles.inputGroup}>
-              <label>Creator Name</label>
-              <input 
-                required 
-                type="text" 
-                placeholder="John Doe"
-                value={formData.name} 
-                onChange={e => setFormData({...formData, name: e.target.value})} 
-                disabled={isUploading}
-              />
-            </div>
 
-            <div className={styles.row}>
-              <div className={styles.inputGroup}>
-                <label>Instagram Handle</label>
-                <input 
-                  required 
-                  type="text" 
-                  placeholder="@nagarivibes"
-                  value={formData.handle} 
-                  onChange={e => setFormData({...formData, handle: e.target.value})} 
-                  disabled={isUploading}
-                />
+          <div className={styles.formContainer}>
+            {isSuccess ? (
+              <div className={styles.successState}>
+                <CheckCircle size={64} className={styles.successIcon} />
+                <h2>SUBMISSION SECURED</h2>
+                <p>Your reel has been uploaded to our servers. We will contact you via email or Instagram if you are selected.</p>
+                <button className={styles.btn} onClick={() => {
+                  setIsSuccess(false);
+                  setFile(null);
+                  setFormData({ name: '', handle: '', email: '', phone: '' });
+                  setProgress(0);
+                }}>Submit Another Entry</button>
               </div>
-              <div className={styles.inputGroup}>
-                <label>Email Address</label>
-                <input 
-                  required 
-                  type="email" 
-                  placeholder="hello@example.com"
-                  value={formData.email} 
-                  onChange={e => setFormData({...formData, email: e.target.value})} 
-                  disabled={isUploading}
-                />
-              </div>
-            </div>
-
-            <div className={styles.inputGroup}>
-              <label>Phone Number</label>
-              <input 
-                required 
-                type="tel" 
-                placeholder="+91 9876543210"
-                value={formData.phone} 
-                onChange={e => setFormData({...formData, phone: e.target.value})} 
-                disabled={isUploading}
-              />
-            </div>
-
-            <div className={styles.uploadGroup}>
-              <label>Reel Video File (MP4, MOV)</label>
-              <div className={`${styles.dropzone} ${file ? styles.hasFile : ''}`}>
-                <input 
-                  type="file" 
-                  accept="video/*" 
-                  onChange={handleFileChange}
-                  disabled={isUploading}
-                  id="file-upload"
-                  className={styles.fileInput}
-                />
-                <label htmlFor="file-upload" className={styles.dropzoneLabel}>
-                  {file ? (
-                    <>
-                      <Video size={32} className={styles.uploadIcon} />
-                      <span className={styles.fileName}>{file.name}</span>
-                      <span className={styles.fileSize}>{(file.size / 1024 / 1024).toFixed(2)} MB</span>
-                    </>
-                  ) : (
-                    <>
-                      <Upload size={32} className={styles.uploadIcon} />
-                      <span>Click or Drag to Upload Reel</span>
-                      <span className={styles.limitText}>Max 100MB</span>
-                    </>
-                  )}
-                </label>
-              </div>
-            </div>
-
-            {isUploading && (
-              <div className={styles.progressContainer}>
-                <div className={styles.progressBar}>
-                  <div className={styles.progressFill} style={{ width: `${progress}%` }}></div>
+            ) : (
+              <form className={styles.form} onSubmit={handleSubmit}>
+                {error && (
+                  <div className={styles.errorBox}>
+                    <AlertCircle size={20} />
+                    <span>{error}</span>
+                  </div>
+                )}
+                
+                <div className={styles.inputGroup}>
+                  <label>Creator Name</label>
+                  <input 
+                    required 
+                    type="text" 
+                    placeholder="John Doe"
+                    value={formData.name} 
+                    onChange={e => setFormData({...formData, name: e.target.value})} 
+                    disabled={isUploading}
+                  />
                 </div>
-                <span className="mono">Uploading... {progress}%</span>
-              </div>
-            )}
 
-            <button 
-              type="submit" 
-              className={styles.submitBtn} 
-              disabled={isUploading || !file}
-            >
-              {isUploading ? 'UPLOADING...' : 'SUBMIT REEL'}
-            </button>
-          </form>
-        )}
+                <div className={styles.row}>
+                  <div className={styles.inputGroup}>
+                    <label>Instagram Handle</label>
+                    <input 
+                      required 
+                      type="text" 
+                      placeholder="@nagarivibes"
+                      value={formData.handle} 
+                      onChange={e => setFormData({...formData, handle: e.target.value})} 
+                      disabled={isUploading}
+                    />
+                  </div>
+                  <div className={styles.inputGroup}>
+                    <label>Email Address</label>
+                    <input 
+                      required 
+                      type="email" 
+                      placeholder="hello@example.com"
+                      value={formData.email} 
+                      onChange={e => setFormData({...formData, email: e.target.value})} 
+                      disabled={isUploading}
+                    />
+                  </div>
+                </div>
+
+                <div className={styles.inputGroup}>
+                  <label>Phone Number</label>
+                  <input 
+                    required 
+                    type="tel" 
+                    placeholder="+91 9876543210"
+                    value={formData.phone} 
+                    onChange={e => setFormData({...formData, phone: e.target.value})} 
+                    disabled={isUploading}
+                  />
+                </div>
+
+                <div className={styles.uploadGroup}>
+                  <label>Reel Video File (MP4, MOV)</label>
+                  <div className={`${styles.dropzone} ${file ? styles.hasFile : ''}`}>
+                    <input 
+                      type="file" 
+                      accept="video/*" 
+                      onChange={handleFileChange}
+                      disabled={isUploading}
+                      id="file-upload"
+                      className={styles.fileInput}
+                    />
+                    <label htmlFor="file-upload" className={styles.dropzoneLabel}>
+                      {file ? (
+                        <>
+                          <Video size={32} className={styles.uploadIcon} />
+                          <span className={styles.fileName}>{file.name}</span>
+                          <span className={styles.fileSize}>{(file.size / 1024 / 1024).toFixed(2)} MB</span>
+                        </>
+                      ) : (
+                        <>
+                          <Upload size={32} className={styles.uploadIcon} />
+                          <span>Click or Drag to Upload Reel</span>
+                          <span className={styles.limitText}>Max 100MB</span>
+                        </>
+                      )}
+                    </label>
+                  </div>
+                </div>
+
+                {isUploading && (
+                  <div className={styles.progressContainer}>
+                    <div className={styles.progressBar}>
+                      <div className={styles.progressFill} style={{ width: `${progress}%` }}></div>
+                    </div>
+                    <span className="mono">Uploading... {progress}%</span>
+                  </div>
+                )}
+
+                <button 
+                  type="submit" 
+                  className={styles.submitBtn} 
+                  disabled={isUploading || !file}
+                >
+                  {isUploading ? 'UPLOADING...' : 'SUBMIT REEL'}
+                </button>
+              </form>
+            )}
+          </div>
+        </div>
       </div>
 
       <Footer />
