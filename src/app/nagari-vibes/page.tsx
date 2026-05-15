@@ -78,6 +78,9 @@ export default function NagariVibes() {
               </div>
             </div>
             <div className={styles.awardCard}>
+              <div className={styles.awardImageWrapper}>
+                <Image src="/mumbai-filmcity.jpeg" alt="Film City Mumbai Win" fill className={styles.awardImage} />
+              </div>
               <div className={styles.awardBody}>
                 <Star className={styles.awardIcon} size={48} />
                 <div className={styles.awardInfo}>
