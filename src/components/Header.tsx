@@ -13,12 +13,23 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
 
   const subBrands = [
-    { name: 'Nagari Vibes', path: '/nagari-vibes', logo: '/logos/vibes-media.png' },
+    { name: 'Nagari Vibes', path: '/nagari-vibes', logo: '/logos/nagari-vibes.png' },
     { name: 'Faithful Vibes', path: '/faithful-vibes', logo: '/logos/faithful-vibes.png' },
     { name: 'Dessert Vibes', path: '/dessert-vibes', logo: '/logos/dessert-vibes.png' },
     { name: 'Vibes Foundation', path: '/vibes-foundation', logo: '/logos/vibes-foundation.png' },
     { name: 'Nagar Real Estate', path: '/real-estate', logo: '/logos/real-estate.png' },
   ];
+
+  useEffect(() => {
+    if (isOpen || isDrawerOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen, isDrawerOpen]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -73,7 +84,7 @@ export default function Header() {
               initial={{ x: '-100%' }}
               animate={{ x: 0 }}
               exit={{ x: '-100%' }}
-              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+              transition={{ type: 'tween', duration: 0.4, ease: 'anticipate' }}
             >
               <div className={styles.drawerHeader}>
                 <span className="mono">VIBES NETWORK</span>
