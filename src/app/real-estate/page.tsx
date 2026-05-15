@@ -18,11 +18,13 @@ export default function NagarRealEstate() {
       <section className={styles.hero} style={{ backgroundImage: "url('/logos/real-estate.png')", backgroundSize: '25%' }}>
         <div className={styles.heroOverlay} />
         <div className={`container ${styles.heroContent}`}>
-          <Link href="/" className={styles.backButton}>
-            <ArrowLeft size={18} />
-            <span>Back to Hub</span>
-          </Link>
-          <div className={styles.badge}>Nagar Real Estate</div>
+          <div className={styles.topBar}>
+            <Link href="/" className={styles.backButton}>
+              <ArrowLeft size={18} />
+              <span>Back to Hub</span>
+            </Link>
+            <div className={styles.badge}>Nagar Real Estate</div>
+          </div>
           <h1 className={styles.title}>
             THE FUTURE OF <span className={styles.accent}>PROPERTY</span> MARKETING
           </h1>

@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Menu, X, Grid } from 'lucide-react';
+import { Menu, X, Grid, ChevronRight } from 'lucide-react';
 import styles from './Header.module.css';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -13,7 +13,7 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
 
   const subBrands = [
-    { name: 'Nagari Vibes', path: '/nagari-vibes', logo: '/logos/nagari-vibes.png' },
+    { name: 'Nagari Vibes', path: '/nagari-vibes', logo: '/logos/vibes-media.png' },
     { name: 'Faithful Vibes', path: '/faithful-vibes', logo: '/logos/faithful-vibes.png' },
     { name: 'Dessert Vibes', path: '/dessert-vibes', logo: '/logos/dessert-vibes.png' },
     { name: 'Vibes Foundation', path: '/vibes-foundation', logo: '/logos/vibes-foundation.png' },
@@ -92,10 +92,13 @@ export default function Header() {
                       className={styles.brandLink}
                       onClick={() => setIsDrawerOpen(false)}
                     >
-                      <div className={styles.brandIconWrapper}>
-                        <Image src={brand.logo} alt={brand.name} width={40} height={40} />
+                      <div className={styles.brandInfo}>
+                        <div className={styles.brandIconWrapper}>
+                          <Image src={brand.logo} alt={brand.name} width={40} height={40} />
+                        </div>
+                        <span className={styles.brandName}>{brand.name}</span>
                       </div>
-                      <span className={styles.brandName}>{brand.name}</span>
+                      <ChevronRight size={18} className={styles.arrow} />
                     </Link>
                   ))}
                 </div>

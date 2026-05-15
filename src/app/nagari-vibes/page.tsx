@@ -32,11 +32,13 @@ export default function NagariVibes() {
       <section className={styles.hero}>
         <div className={styles.heroOverlay} />
         <div className={`container ${styles.heroContent}`}>
-          <Link href="/" className={styles.backButton}>
-            <ArrowLeft size={18} />
-            <span>Back to Hub</span>
-          </Link>
-          <div className={styles.badge}>Nagari Vibes Platform</div>
+          <div className={styles.topBar}>
+            <Link href="/" className={styles.backButton}>
+              <ArrowLeft size={18} />
+              <span>Back to Hub</span>
+            </Link>
+            <div className={styles.badge}>Nagari Vibes Platform</div>
+          </div>
           <h1 className={styles.title}>
             SHAPING THE <span className={styles.accent}>CULTURE</span> OF AHILYANAGAR
           </h1>

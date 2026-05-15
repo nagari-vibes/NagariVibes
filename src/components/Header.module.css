@@ -183,7 +183,7 @@
 .brandLink {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  justify-content: space-between;
   padding: 1rem;
   text-decoration: none;
   background: rgba(255, 255, 255, 0.03);
@@ -196,6 +196,22 @@
   background: rgba(212, 175, 55, 0.05);
   border-color: var(--primary-glow);
   transform: translateX(10px);
+}
+
+.brandLink:hover .arrow {
+  color: var(--primary);
+  transform: translateX(3px);
+}
+
+.brandInfo {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.arrow {
+  color: var(--muted);
+  transition: all 0.3s ease;
 }
 
 .brandIconWrapper {

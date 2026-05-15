@@ -18,11 +18,13 @@ export default function VibesFoundation() {
       <section className={styles.hero} style={{ backgroundImage: "url('/logos/vibes-foundation.png')", backgroundSize: '25%' }}>
         <div className={styles.heroOverlay} />
         <div className={`container ${styles.heroContent}`}>
-          <Link href="/" className={styles.backButton}>
-            <ArrowLeft size={18} />
-            <span>Back to Hub</span>
-          </Link>
-          <div className={styles.badge}>Vibes Foundation</div>
+          <div className={styles.topBar}>
+            <Link href="/" className={styles.backButton}>
+              <ArrowLeft size={18} />
+              <span>Back to Hub</span>
+            </Link>
+            <div className={styles.badge}>Vibes Foundation</div>
+          </div>
           <h1 className={styles.title}>
             CREATING AN <span className={styles.accent}>IMPACT</span> BEYOND MEDIA
           </h1>
