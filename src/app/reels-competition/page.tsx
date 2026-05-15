@@ -255,7 +255,7 @@ export default function ReelsCompetition() {
             <h2 className="mono" style={{marginBottom: '1rem'}}>Complete Payment</h2>
             <p style={{marginBottom: '1rem', color: '#ccc'}}>Entry Fee: <strong>₹500</strong></p>
             <div style={{background: '#fff', padding: '1rem', borderRadius: '8px', display: 'inline-block', marginBottom: '1.5rem'}}>
-              <img src={`https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent('upi://pay?pa=tejas@upi&pn=Nagari Vibes&am=500&cu=INR')}&size=200x200`} alt="UPI QR Code" style={{width: '200px', height: '200px'}} />
+              <img src={`https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent('upi://pay?pa=8421495454-3@ybl&pn=Nagari Vibes&am=500&cu=INR')}&size=200x200`} alt="UPI QR Code" style={{width: '200px', height: '200px'}} />
             </div>
             <p style={{fontSize: '0.9rem', color: '#aaa', marginBottom: '2rem'}}>Scan with Google Pay, PhonePe, or Paytm.</p>
             
