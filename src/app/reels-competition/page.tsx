@@ -40,6 +40,10 @@ export default function ReelsCompetition() {
   };
 
   const processSubmission = async () => {
+    if (!file) {
+      setError('Please attach a video file.');
+      return;
+    }
     setIsPaymentModalOpen(false);
     setIsUploading(true);
     setError('');
