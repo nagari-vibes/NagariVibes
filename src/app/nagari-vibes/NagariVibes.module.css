@@ -396,9 +396,11 @@
     margin-bottom: 2rem;
   }
   .heroLogo {
-    width: 120px;
+    width: 140px;
     height: auto;
     object-fit: contain;
+    mix-blend-mode: lighten;
+    filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.2));
   }
   .topBar {
     flex-direction: column;
