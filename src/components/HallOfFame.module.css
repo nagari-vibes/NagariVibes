@@ -1,0 +1,130 @@
+.achievements {
+  padding: 8rem 0;
+  background-color: #050505;
+}
+
+.headerCentered {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.sectionTitle {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+
+.awardsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+  .awardsGrid {
+    grid-template-columns: 1fr 1fr;
+    max-width: 100%;
+    gap: 2rem;
+  }
+}
+
+.awardCard {
+  display: flex;
+  flex-direction: column;
+  background: var(--glass-bg);
+  border-radius: 20px;
+  border: 1px solid var(--glass-border);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.awardCard:hover {
+  transform: translateY(-10px);
+  border-color: rgba(212, 175, 55, 0.4);
+}
+
+.awardImageWrapper {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .awardImageWrapper {
+    height: 450px;
+  }
+}
+
+.awardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.wetnjoyImage {
+  object-position: 50% 50%;
+}
+
+.mumbaiImage {
+  object-position: 50% 15%;
+}
+
+.awardCard:hover .awardImage {
+  transform: scale(1.05);
+}
+
+.awardBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2.5rem;
+}
+
+.awardPlace {
+  color: var(--primary);
+  font-family: var(--font-azeret-mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+}
+
+.awardInfo h3 {
+  font-size: 2rem;
+  margin: 0.5rem 0;
+  line-height: 1.2;
+}
+
+.awardInfo p {
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .achievements {
+    padding: 4rem 0;
+  }
+  .sectionTitle {
+    font-size: 2rem;
+  }
+  .awardsGrid {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+  .awardCard {
+    flex-direction: column;
+    text-align: center;
+    padding: 0;
+  }
+  .awardInfo h3 {
+    font-size: 1.5rem;
+  }
+}

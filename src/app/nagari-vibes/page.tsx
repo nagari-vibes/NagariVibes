@@ -56,41 +56,10 @@ export default function NagariVibes() {
         </div>
       </section>
 
-      {/* Achievements Section */}
-      <section className={styles.achievements}>
+      {/* Brand Ticker Section */}
+      <section className={styles.brands}>
         <div className="container">
-          <div className={styles.headerCentered}>
-            <h2 className={styles.sectionTitle}>Hall of Fame</h2>
-            <p>Recognized for excellence in digital content creation.</p>
-          </div>
-          <div className={styles.awardsGrid}>
-            <div className={styles.awardCard}>
-              <div className={styles.awardImageWrapper}>
-                <Image src="/wetnjoy-win.jpeg" alt="Wet N Joy Win" fill className={`${styles.awardImage} ${styles.wetnjoyImage}`} />
-              </div>
-              <div className={styles.awardBody}>
-                <div className={styles.awardInfo}>
-                  <span className={styles.awardPlace}>1st Prize (₹50,000)</span>
-                  <h3>Wet N Joy Shirdi</h3>
-                  <p>Official Reel Competition Winner</p>
-                </div>
-              </div>
-            </div>
-            <div className={styles.awardCard}>
-              <div className={styles.awardImageWrapper}>
-                <Image src="/mumbai-filmcity.jpeg" alt="Film City Mumbai Win" fill className={`${styles.awardImage} ${styles.mumbaiImage}`} />
-              </div>
-              <div className={styles.awardBody}>
-                <div className={styles.awardInfo}>
-                  <span className={styles.awardPlace}>1st in Maharashtra</span>
-                  <h3>Film City Mumbai</h3>
-                  <p>National Reel Creation Contest</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div className={styles.brandTicker} style={{ marginTop: '4rem' }}>
+          <div className={styles.brandTicker}>
             <p className="mono" style={{ textAlign: 'center', marginBottom: '1rem', color: 'var(--muted)' }}>BRANDS WE'VE WORKED WITH</p>
             <div className={styles.brandList}>
               {brands.map((brand) => (
