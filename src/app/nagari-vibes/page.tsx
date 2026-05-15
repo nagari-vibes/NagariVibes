@@ -66,7 +66,7 @@ export default function NagariVibes() {
           <div className={styles.awardsGrid}>
             <div className={styles.awardCard}>
               <div className={styles.awardImageWrapper}>
-                <Image src="/wetnjoy-win.jpeg" alt="Wet N Joy Win" fill className={styles.awardImage} />
+                <Image src="/wetnjoy-win.jpeg" alt="Wet N Joy Win" fill className={`${styles.awardImage} ${styles.wetnjoyImage}`} />
               </div>
               <div className={styles.awardBody}>
                 <div className={styles.awardInfo}>

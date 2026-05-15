@@ -336,6 +336,10 @@
   transition: transform 0.5s ease;
 }
 
+.wetnjoyImage {
+  object-position: bottom;
+}
+
 .awardCard:hover .awardImage {
   transform: scale(1.05);
 }
