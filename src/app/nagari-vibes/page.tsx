@@ -69,7 +69,6 @@ export default function NagariVibes() {
                 <Image src="/wetnjoy-win.jpeg" alt="Wet N Joy Win" fill className={styles.awardImage} />
               </div>
               <div className={styles.awardBody}>
-                <Trophy className={styles.awardIcon} size={48} />
                 <div className={styles.awardInfo}>
                   <span className={styles.awardPlace}>1st Prize (₹50,000)</span>
                   <h3>Wet N Joy Shirdi</h3>
@@ -82,7 +81,6 @@ export default function NagariVibes() {
                 <Image src="/mumbai-filmcity.jpeg" alt="Film City Mumbai Win" fill className={styles.awardImage} />
               </div>
               <div className={styles.awardBody}>
-                <Star className={styles.awardIcon} size={48} />
                 <div className={styles.awardInfo}>
                   <span className={styles.awardPlace}>1st in Maharashtra</span>
                   <h3>Film City Mumbai</h3>
