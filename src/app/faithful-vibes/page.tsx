@@ -15,13 +15,13 @@ export default function FaithfulVibes() {
 
   return (
     <main className={styles.page}>
-      <Link href="/" className={styles.backButton}>
-        <ArrowLeft size={20} />
-        <span>Back to Media Hub</span>
-      </Link>
       <section className={styles.hero} style={{ backgroundImage: "url('/logos/faithful-vibes.png')", backgroundSize: '25%' }}>
         <div className={styles.heroOverlay} />
         <div className={`container ${styles.heroContent}`}>
+          <Link href="/" className={styles.backButton}>
+            <ArrowLeft size={18} />
+            <span>Back to Hub</span>
+          </Link>
           <div className={styles.badge}>Faithful Vibes</div>
           <h1 className={styles.title}>
             CELEBRATING <span className={styles.accent}>FAITH</span> & COMMUNITY

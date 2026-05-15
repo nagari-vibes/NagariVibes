@@ -15,13 +15,13 @@ export default function DessertVibes() {
 
   return (
     <main className={styles.page}>
-      <Link href="/" className={styles.backButton}>
-        <ArrowLeft size={20} />
-        <span>Back to Media Hub</span>
-      </Link>
       <section className={styles.hero} style={{ backgroundImage: "url('/logos/dessert-vibes.png')", backgroundSize: '25%' }}>
         <div className={styles.heroOverlay} />
         <div className={`container ${styles.heroContent}`}>
+          <Link href="/" className={styles.backButton}>
+            <ArrowLeft size={18} />
+            <span>Back to Hub</span>
+          </Link>
           <div className={styles.badge}>Dessert Vibes Stall</div>
           <h1 className={styles.title}>
             THE BEST <span className={styles.accent}>DESSERT BOWLS</span> IN THE CITY
