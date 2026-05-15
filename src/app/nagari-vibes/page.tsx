@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { CheckCircle, Trophy, Users, Zap, Award, Star, ArrowLeft, Instagram } from 'lucide-react';
+import { CheckCircle, Trophy, Users, Zap, Award, Star, ArrowLeft, Heart } from 'lucide-react';
 import styles from './NagariVibes.module.css';
 
 export default function NagariVibes() {
@@ -39,6 +39,11 @@ export default function NagariVibes() {
             </Link>
             <div className={styles.badge}>Flagship Media Platform</div>
           </div>
+          
+          <div className={styles.heroLogoWrapper}>
+            <Image src="/logos/nagari-vibes.png" alt="Nagari Vibes" width={140} height={140} className={styles.heroLogo} priority />
+          </div>
+
           <h1 className={styles.title}>
             SHAPING THE <span className={styles.accent}>CULTURE</span><br/> OF AHILYANAGAR
           </h1>
@@ -77,7 +82,7 @@ export default function NagariVibes() {
             
             <div className={styles.bentoStats}>
               <div className={`${styles.statCard} ${styles.statPrimary}`}>
-                <Instagram size={32} className={styles.socialIcon} />
+                <Heart size={32} className={styles.socialIcon} />
                 <span className={styles.statNum}>100k+</span>
                 <span className={styles.statLabel}>Active Followers</span>
               </div>

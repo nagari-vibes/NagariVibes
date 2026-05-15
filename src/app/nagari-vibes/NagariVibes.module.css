@@ -373,6 +373,10 @@
   box-shadow: 0 10px 40px rgba(0,0,0,0.3);
 }
 
+.heroLogoWrapper {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .page {
     padding-top: 120px;
@@ -380,13 +384,21 @@
   .hero {
     height: auto;
     min-height: 75vh;
-    background-size: 70%;
-    background-position: center bottom 5%;
+    background-image: none !important;
     align-items: flex-start;
     padding-bottom: 8rem;
   }
   .heroOverlay {
     background: linear-gradient(to bottom, rgba(5,5,5,0.6) 0%, rgba(5,5,5,0.8) 70%, rgba(5,5,5,0.95) 100%);
+  }
+  .heroLogoWrapper {
+    display: block;
+    margin-bottom: 2rem;
+  }
+  .heroLogo {
+    width: 120px;
+    height: auto;
+    object-fit: contain;
   }
   .topBar {
     flex-direction: column;
