@@ -47,7 +47,7 @@ export default function AdminDashboard() {
   // Simple hardcoded login for demo
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    if (username.trim().toLowerCase() === 'admin' && password === 'vibes2026') {
+    if (username.trim().toLowerCase() === 'admin' && password.trim().toLowerCase() === 'vibes2026') {
       setIsLoggedIn(true);
     } else {
       alert('Invalid credentials');
