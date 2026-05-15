@@ -14,6 +14,12 @@ export default function BrandTicker() {
 
   return (
     <section className={styles.brands}>
+      <div className="container">
+        <div className={styles.headerCentered}>
+          <h2 className={styles.sectionTitle}>Partner Brands</h2>
+          <p className={styles.sectionSubtitle}>Collaborating with industry leaders to deliver excellence.</p>
+        </div>
+      </div>
       <div className={styles.tapeWrapper}>
         <div className={styles.marqueeContainer}>
           <motion.div 
