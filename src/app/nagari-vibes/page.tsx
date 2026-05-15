@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { CheckCircle, Trophy, Users, Zap, Award, Star, ArrowLeft } from 'lucide-react';
+import { CheckCircle, Trophy, Users, Zap, Award, Star, ArrowLeft, Instagram } from 'lucide-react';
 import styles from './NagariVibes.module.css';
 
 export default function NagariVibes() {
@@ -37,45 +37,59 @@ export default function NagariVibes() {
               <ArrowLeft size={18} />
               <span>Back to Hub</span>
             </Link>
-            <div className={styles.badge}>Nagari Vibes Platform</div>
+            <div className={styles.badge}>Flagship Media Platform</div>
           </div>
           <h1 className={styles.title}>
-            SHAPING THE <span className={styles.accent}>CULTURE</span> OF AHILYANAGAR
+            SHAPING THE <span className={styles.accent}>CULTURE</span><br/> OF AHILYANAGAR
           </h1>
           <p className={styles.description}>
-            A fast-growing digital media platform dedicated to showcasing the culture, lifestyle, food, travel, events, and vibrant vibes of our city.
+            The #1 digital media network dedicated to showcasing the lifestyle, food, travel, events, and vibrant youth culture of our city.
           </p>
+          <div className={styles.heroActions}>
+            <a href="#about" className={styles.primaryBtn}>Explore Media Kit</a>
+          </div>
         </div>
       </section>
 
       {/* About Section */}
-      <section className={styles.about}>
+      <section id="about" className={styles.about}>
         <div className="container">
           <div className={styles.aboutGrid}>
             <div className={styles.aboutText}>
-              <h2 className={styles.sectionTitle}>The Voice of the City</h2>
+              <h2 className={styles.sectionTitle}>The Digital Voice of the City</h2>
               <p>
-                From trending reels to local stories, we create engaging content that connects thousands of Nagarkar every day. 
-                With a strong social media presence and creative storytelling, Nagari Vibes has become a trusted digital platform 
-                for local businesses, brands, and youth culture.
+                From trending reels to untold local stories, we create high-retention content that connects thousands of Nagarkar every single day. 
+                With a massive social media presence and data-driven storytelling, Nagari Vibes is the ultimate launchpad 
+                for local businesses, national brands, and community events.
               </p>
+              
               <div className={styles.specializations}>
                 {specializations.map((spec) => (
                   <div key={spec} className={styles.specItem}>
-                    <CheckCircle size={18} className={styles.icon} />
+                    <div className={styles.iconBox}>
+                      <CheckCircle size={16} className={styles.icon} />
+                    </div>
                     <span>{spec}</span>
                   </div>
                 ))}
               </div>
             </div>
-            <div className={styles.statsCard}>
-              <div className={styles.stat}>
+            
+            <div className={styles.bentoStats}>
+              <div className={`${styles.statCard} ${styles.statPrimary}`}>
+                <Instagram size={32} className={styles.socialIcon} />
                 <span className={styles.statNum}>100k+</span>
-                <span className={styles.statLabel}>Monthly Reach</span>
+                <span className={styles.statLabel}>Active Followers</span>
               </div>
-              <div className={styles.stat}>
+              <div className={styles.statCard}>
+                <Zap size={24} className={styles.socialIcon} />
+                <span className={styles.statNum}>2M+</span>
+                <span className={styles.statLabel}>Monthly Impressions</span>
+              </div>
+              <div className={styles.statCard}>
+                <Users size={24} className={styles.socialIcon} />
                 <span className={styles.statNum}>Daily</span>
-                <span className={styles.statLabel}>Engagement</span>
+                <span className={styles.statLabel}>Viral Engagement</span>
               </div>
             </div>
           </div>
@@ -86,8 +100,9 @@ export default function NagariVibes() {
       <section className={styles.collabs}>
         <div className="container">
           <div className={styles.headerCentered}>
-            <h2 className={styles.sectionTitle}>Collaboration Highlights</h2>
-            <p>We help brands build visibility, engagement, and trust through social media.</p>
+            <div className={styles.badge}>Our Services</div>
+            <h2 className={styles.sectionTitle}>Collaboration & Impact</h2>
+            <p>We help modern brands build unmatched visibility and trust through localized social media strategies.</p>
           </div>
           
           <div className={styles.highlightsGrid}>
@@ -100,7 +115,7 @@ export default function NagariVibes() {
           </div>
 
           <div className={styles.brandTicker}>
-            <p className="mono">TRUSTED BY</p>
+            <p className="mono">BRANDS WE'VE WORKED WITH</p>
             <div className={styles.brandList}>
               {brands.map((brand) => (
                 <span key={brand} className={styles.brandName}>{brand}</span>
@@ -113,22 +128,25 @@ export default function NagariVibes() {
       {/* Achievements Section */}
       <section className={styles.achievements}>
         <div className="container">
-          <h2 className={styles.sectionTitle}>Hall of Fame</h2>
+          <div className={styles.headerCentered}>
+            <h2 className={styles.sectionTitle}>Hall of Fame</h2>
+            <p>Recognized for excellence in digital content creation.</p>
+          </div>
           <div className={styles.awardsGrid}>
             <div className={styles.awardCard}>
-              <Trophy className={styles.awardIcon} size={48} />
+              <Trophy className={styles.awardIcon} size={56} />
               <div className={styles.awardInfo}>
                 <span className={styles.awardPlace}>1st Prize (₹50,000)</span>
                 <h3>Wet N Joy Shirdi</h3>
-                <p>Reel Competition Winner</p>
+                <p>Official Reel Competition Winner</p>
               </div>
             </div>
             <div className={styles.awardCard}>
-              <Star className={styles.awardIcon} size={48} />
+              <Star className={styles.awardIcon} size={56} />
               <div className={styles.awardInfo}>
                 <span className={styles.awardPlace}>1st in Maharashtra</span>
                 <h3>Film City Mumbai</h3>
-                <p>National Reel Competition</p>
+                <p>National Reel Creation Contest</p>
               </div>
             </div>
           </div>
@@ -140,8 +158,8 @@ export default function NagariVibes() {
         <div className="container">
           <div className={styles.ctaBox}>
             <h2>Ready to go viral?</h2>
-            <p>Let's showcase your brand to the heart of Ahilyanagar.</p>
-            <Link href="/#contact" className={styles.ctaBtn}>Start a Collaboration</Link>
+            <p>Leverage the biggest digital community in Ahilyanagar.</p>
+            <Link href="/#contact" className={styles.ctaBtn}>Start a Campaign</Link>
           </div>
         </div>
       </section>

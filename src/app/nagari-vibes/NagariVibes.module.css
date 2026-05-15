@@ -96,6 +96,32 @@
   max-width: 650px;
 }
 
+.heroActions {
+  margin-top: 3rem;
+}
+
+.primaryBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2.5rem;
+  background: var(--primary);
+  color: #000;
+  text-decoration: none;
+  font-family: var(--font-azeret-mono);
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.primaryBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+  background: #fff;
+}
+
 /* About */
 .about {
   padding: 8rem 0;
@@ -103,20 +129,21 @@
 
 .aboutGrid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  gap: 4rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
   align-items: center;
 }
 
 .sectionTitle {
   font-family: var(--font-heading);
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin-bottom: 2rem;
   text-transform: uppercase;
+  letter-spacing: -1px;
 }
 
 .aboutText p {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   line-height: 1.8;
   color: var(--muted);
   margin-bottom: 3rem;
@@ -124,44 +151,79 @@
 
 .specializations {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  grid-template-columns: 1fr;
+  gap: 1.2rem;
 }
 
 .specItem {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
-  color: #eee;
+  gap: 1.2rem;
+  color: #fff;
+  font-size: 1.05rem;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.icon {
+.iconBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: rgba(212, 175, 55, 0.1);
+  border-radius: 6px;
   color: var(--primary);
 }
 
-.statsCard {
+.bentoStats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.statCard {
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
-  padding: 3rem;
-  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.statCard:hover {
+  transform: translateY(-5px);
+  border-color: rgba(212, 175, 55, 0.3);
+}
+
+.statPrimary {
+  grid-column: span 2;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+  border-color: rgba(212, 175, 55, 0.2);
+}
+
+.socialIcon {
+  color: var(--primary);
+  margin-bottom: 0.5rem;
 }
 
 .statNum {
   display: block;
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-family: var(--font-heading);
-  color: var(--primary);
+  color: #fff;
   line-height: 1;
 }
 
 .statLabel {
   color: var(--muted);
   text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 0.8rem;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
 }
 
 /* Collabs */
@@ -353,11 +415,16 @@
   .specializations {
     grid-template-columns: 1fr;
   }
-  .statsCard {
+  .bentoStats {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .statPrimary {
+    grid-column: span 1;
+  }
+  .statCard {
     padding: 2rem;
-    gap: 2rem;
-    flex-direction: row;
-    justify-content: space-between;
+    gap: 0.5rem;
   }
   .statNum {
     font-size: 2.5rem;
