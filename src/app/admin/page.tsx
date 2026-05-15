@@ -18,8 +18,10 @@ interface CompetitionEntry {
   name: string;
   handle: string;
   email: string;
+  phone?: string;
   videoUrl: string;
   createdAt: string;
+  status?: 'approved' | 'denied' | 'pending';
 }
 
 export default function AdminDashboard() {
@@ -72,6 +74,19 @@ export default function AdminDashboard() {
     if (confirm('Are you sure?')) {
       await fetch(`/api/projects/${id}`, { method: 'DELETE' });
       setProjects(projects.filter(p => p.id !== id));
+    }
+  };
+
+  const updateEntryStatus = async (id: string, status: 'approved' | 'denied') => {
+    try {
+      await fetch(`/api/reels-competition/${id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ status })
+      });
+      setEntries(entries.map(e => e.id === id ? { ...e, status } : e));
+    } catch (err) {
+      console.error('Failed to update status', err);
     }
   };
 
@@ -199,8 +214,10 @@ export default function AdminDashboard() {
                     <th>Date</th>
                     <th>Creator Name</th>
                     <th>IG Handle</th>
-                    <th>Email</th>
+                    <th>Email / Phone</th>
                     <th>Video File</th>
+                    <th>Status</th>
+                    <th>Actions</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -215,8 +232,30 @@ export default function AdminDashboard() {
                         <td>{new Date(entry.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })}</td>
                         <td><strong>{entry.name}</strong></td>
                         <td><a href={`https://instagram.com/${entry.handle.replace('@', '')}`} target="_blank" rel="noreferrer" className={styles.tableLink}>{entry.handle}</a></td>
-                        <td><a href={`mailto:${entry.email}`} className={styles.tableLink}>{entry.email}</a></td>
+                        <td>
+                          <a href={`mailto:${entry.email}`} className={styles.tableLink} style={{display: 'block'}}>{entry.email}</a>
+                          {entry.phone && <span className="mono" style={{fontSize: '0.8rem', color: '#aaa'}}>{entry.phone}</span>}
+                        </td>
                         <td><button onClick={() => setViewingVideo(entry.videoUrl)} className={styles.tableLink} style={{background: 'none', border: 'none', cursor: 'pointer', fontFamily: 'inherit', fontSize: '1rem'}}>View Reel ↗</button></td>
+                        <td>
+                          <span style={{
+                            padding: '0.2rem 0.6rem', 
+                            borderRadius: '4px', 
+                            fontSize: '0.8rem',
+                            fontWeight: 'bold',
+                            textTransform: 'uppercase',
+                            background: entry.status === 'approved' ? 'rgba(0,255,0,0.1)' : entry.status === 'denied' ? 'rgba(255,0,0,0.1)' : 'rgba(255,255,255,0.1)',
+                            color: entry.status === 'approved' ? '#00ff00' : entry.status === 'denied' ? '#ff3333' : '#aaa'
+                          }}>
+                            {entry.status || 'Pending'}
+                          </span>
+                        </td>
+                        <td>
+                          <div style={{display: 'flex', gap: '0.5rem'}}>
+                            <button onClick={() => updateEntryStatus(entry.id, 'approved')} style={{background: '#00ff00', color: '#000', border: 'none', padding: '0.3rem 0.6rem', borderRadius: '4px', cursor: 'pointer', fontWeight: 'bold'}}>Approve</button>
+                            <button onClick={() => updateEntryStatus(entry.id, 'denied')} style={{background: '#ff3333', color: '#fff', border: 'none', padding: '0.3rem 0.6rem', borderRadius: '4px', cursor: 'pointer', fontWeight: 'bold'}}>Deny</button>
+                          </div>
+                        </td>
                       </tr>
                     ))
                   )}

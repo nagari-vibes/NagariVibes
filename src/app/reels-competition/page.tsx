@@ -8,7 +8,8 @@ import styles from './Competition.module.css';
 
 export default function ReelsCompetition() {
   const [file, setFile] = useState<File | null>(null);
-  const [formData, setFormData] = useState({ name: '', handle: '', email: '' });
+  const [formData, setFormData] = useState({ name: '', handle: '', email: '', phone: '' });
+  const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
   const [progress, setProgress] = useState(0);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -33,7 +34,13 @@ export default function ReelsCompetition() {
       setError('Please attach a video file.');
       return;
     }
+    
+    // Open payment modal instead of uploading directly
+    setIsPaymentModalOpen(true);
+  };
 
+  const processSubmission = async () => {
+    setIsPaymentModalOpen(false);
     setIsUploading(true);
     setError('');
     setProgress(10);
@@ -175,6 +182,18 @@ export default function ReelsCompetition() {
               </div>
             </div>
 
+            <div className={styles.inputGroup}>
+              <label>Phone Number</label>
+              <input 
+                required 
+                type="tel" 
+                placeholder="+91 9876543210"
+                value={formData.phone} 
+                onChange={e => setFormData({...formData, phone: e.target.value})} 
+                disabled={isUploading}
+              />
+            </div>
+
             <div className={styles.uploadGroup}>
               <label>Reel Video File (MP4, MOV)</label>
               <div className={`${styles.dropzone} ${file ? styles.hasFile : ''}`}>
@@ -225,6 +244,36 @@ export default function ReelsCompetition() {
       </div>
 
       <Footer />
+
+      {isPaymentModalOpen && (
+        <div className={styles.paymentModalOverlay}>
+          <div className={styles.paymentModal}>
+            <h2 className="mono" style={{marginBottom: '1rem'}}>Complete Payment</h2>
+            <p style={{marginBottom: '1rem', color: '#ccc'}}>Entry Fee: <strong>₹500</strong></p>
+            <div style={{background: '#fff', padding: '1rem', borderRadius: '8px', display: 'inline-block', marginBottom: '1.5rem'}}>
+              <img src={`https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent('upi://pay?pa=tejas@upi&pn=Nagari Vibes&am=500&cu=INR')}&size=200x200`} alt="UPI QR Code" style={{width: '200px', height: '200px'}} />
+            </div>
+            <p style={{fontSize: '0.9rem', color: '#aaa', marginBottom: '2rem'}}>Scan with Google Pay, PhonePe, or Paytm.</p>
+            
+            <div style={{display: 'flex', gap: '1rem', justifyContent: 'center'}}>
+              <button 
+                type="button" 
+                onClick={() => setIsPaymentModalOpen(false)}
+                style={{background: 'transparent', border: '1px solid #444', color: '#fff', padding: '0.8rem 1.5rem', cursor: 'pointer', borderRadius: '4px'}}
+              >
+                Cancel
+              </button>
+              <button 
+                type="button" 
+                onClick={processSubmission}
+                style={{background: 'var(--primary)', border: 'none', color: '#000', padding: '0.8rem 1.5rem', fontWeight: 'bold', cursor: 'pointer', borderRadius: '4px'}}
+              >
+                I Have Paid
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   );
 }
