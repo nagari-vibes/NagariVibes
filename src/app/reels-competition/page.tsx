@@ -136,7 +136,7 @@ export default function ReelsCompetition() {
             <button className={styles.btn} onClick={() => {
               setIsSuccess(false);
               setFile(null);
-              setFormData({ name: '', handle: '', email: '' });
+              setFormData({ name: '', handle: '', email: '', phone: '' });
               setProgress(0);
             }}>Submit Another Entry</button>
           </div>
