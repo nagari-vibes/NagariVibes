@@ -25,7 +25,9 @@
 }
 
 .tapeWrapper {
-  width: 120%;
+  width: 140%;
+  left: -20%;
+  position: relative;
   /* White Cotton Feel: Off-white with a subtle texture effect */
   background: #fdfdfd;
   background-image: url("https://www.transparenttextures.com/patterns/felt.png"); /* Subtle felt/cotton texture */
@@ -36,7 +38,6 @@
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
   border-top: 6px solid var(--primary); /* Gold border from the palette */
   border-bottom: 6px solid var(--primary);
-  position: relative;
 }
 
 /* Adding a subtle grain overlay for the cotton feel */
@@ -113,7 +114,8 @@
     letter-spacing: -1px;
   }
   .tapeWrapper {
-    width: 130%;
+    width: 180%;
+    left: -40%;
     transform: rotate(-3deg);
     padding: 0.8rem 0;
   }
