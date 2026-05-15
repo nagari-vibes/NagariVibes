@@ -1,6 +1,7 @@
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import HallOfFame from '@/components/HallOfFame';
+import BrandTicker from '@/components/BrandTicker';
 import Services from '@/components/Services';
 import Projects from '@/components/Projects';
 import Contact from '@/components/Contact';
@@ -15,6 +16,7 @@ export default function Home() {
       <Header />
       <Hero />
       <HallOfFame />
+      <BrandTicker />
       <Services />
       <Projects />
       <Contact />

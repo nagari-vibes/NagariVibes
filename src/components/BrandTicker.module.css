@@ -1,0 +1,47 @@
+.brands {
+  padding: 4rem 0;
+  background-color: #050505;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.brandTicker {
+  text-align: center;
+}
+
+.brandTicker p {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--muted);
+  letter-spacing: 2px;
+  font-size: 0.75rem;
+}
+
+.brandList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.brandName {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: #444;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+.brandName:hover {
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .brandList {
+    gap: 1.5rem;
+  }
+  .brandName {
+    font-size: 1.1rem;
+  }
+}

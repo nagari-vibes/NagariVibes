@@ -24,8 +24,6 @@ export default function NagariVibes() {
     "Local Business Branding"
   ];
 
-  const brands = ["Paytm", "Redtape", "Noise", "Prestige", "Local Cafés", "Startup & Local Businesses"];
-
   return (
     <main className={styles.page}>
       {/* Hero Section */}
@@ -55,21 +53,6 @@ export default function NagariVibes() {
           </div>
         </div>
       </section>
-
-      {/* Brand Ticker Section */}
-      <section className={styles.brands}>
-        <div className="container">
-          <div className={styles.brandTicker}>
-            <p className="mono" style={{ textAlign: 'center', marginBottom: '1rem', color: 'var(--muted)' }}>BRANDS WE'VE WORKED WITH</p>
-            <div className={styles.brandList}>
-              {brands.map((brand) => (
-                <span key={brand} className={styles.brandName}>{brand}</span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* About Section */}
       <section id="about" className={styles.about}>
         <div className="container">
