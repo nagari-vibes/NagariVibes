@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { CheckCircle, Trophy, Users, Zap, Award, Star } from 'lucide-react';
+import { CheckCircle, Trophy, Users, Zap, Award, Star, ArrowLeft } from 'lucide-react';
 import styles from './NagariVibes.module.css';
 
 export default function NagariVibes() {
@@ -28,6 +28,10 @@ export default function NagariVibes() {
 
   return (
     <main className={styles.page}>
+      <Link href="/" className={styles.backButton}>
+        <ArrowLeft size={20} />
+        <span>Back to Media Hub</span>
+      </Link>
       {/* Hero Section */}
       <section className={styles.hero}>
         <div className={styles.heroOverlay} />

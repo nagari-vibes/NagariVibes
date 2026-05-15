@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heart, Globe, Users, Gift, ShieldCheck, Sparkles } from 'lucide-react';
+import { Heart, Globe, Users, Gift, ShieldCheck, Sparkles, ArrowLeft } from 'lucide-react';
 import styles from '../nagari-vibes/NagariVibes.module.css'; // Reusing the high-end layout system
 import Link from 'next/link';
 
@@ -15,6 +15,10 @@ export default function VibesFoundation() {
 
   return (
     <main className={styles.page}>
+      <Link href="/" className={styles.backButton}>
+        <ArrowLeft size={20} />
+        <span>Back to Media Hub</span>
+      </Link>
       <section className={styles.hero} style={{ backgroundImage: "url('/logos/vibes-foundation.png')", backgroundSize: '25%' }}>
         <div className={styles.heroOverlay} />
         <div className={`container ${styles.heroContent}`}>

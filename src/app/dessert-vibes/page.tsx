@@ -1,29 +1,33 @@
 import React from 'react';
-import { Coffee, Pizza, Utensils, Camera, Map, Star } from 'lucide-react';
+import { Coffee, Pizza, Utensils, Camera, Map, Star, ArrowLeft } from 'lucide-react';
 import styles from '../nagari-vibes/NagariVibes.module.css';
 import Link from 'next/link';
 
 export default function DessertVibes() {
   const features = [
-    "Café & Restaurant Reviews",
-    "Food Styling & Photography",
-    "Chef Spotlights",
-    "Hidden Gem Discovery",
-    "Culinary Event Coverage",
-    "Menu Launch Campaigns"
+    "Signature Dessert Bowls",
+    "Live Preparation",
+    "Fresh Ingredients",
+    "Professor Chowk Landmark",
+    "Late Night Cravings Hub",
+    "Aesthetic Street Food"
   ];
 
   return (
     <main className={styles.page}>
+      <Link href="/" className={styles.backButton}>
+        <ArrowLeft size={20} />
+        <span>Back to Media Hub</span>
+      </Link>
       <section className={styles.hero} style={{ backgroundImage: "url('/logos/dessert-vibes.png')", backgroundSize: '25%' }}>
         <div className={styles.heroOverlay} />
         <div className={`container ${styles.heroContent}`}>
-          <div className={styles.badge}>Dessert Vibes</div>
+          <div className={styles.badge}>Dessert Vibes Stall</div>
           <h1 className={styles.title}>
-            AHILYANAGAR'S <span className={styles.accent}>FLAVOR</span> HUB
+            THE BEST <span className={styles.accent}>DESSERT BOWLS</span> IN THE CITY
           </h1>
           <p className={styles.description}>
-            The ultimate guide to the city's food and lifestyle scene. We find the best tastes and the most aesthetic spots so you don't have to.
+            Visit us at Professor Chowk, Savedi. Experience the most aesthetic and delicious dessert bowls in Ahilyanagar, made fresh for you.
           </p>
         </div>
       </section>
@@ -32,16 +36,16 @@ export default function DessertVibes() {
         <div className="container">
           <div className={styles.aboutGrid}>
             <div className={styles.aboutText}>
-              <h2 className={styles.sectionTitle}>Curating the Tastes</h2>
+              <h2 className={styles.sectionTitle}>Sweetness on the Street</h2>
               <p>
-                Dessert Vibes is for the foodies and lifestyle enthusiasts. 
-                We explore the heart of the city's kitchens, from street food to fine dining, 
-                capturing the textures and flavors that make Ahilyanagar delicious.
+                Dessert Vibes is more than just a brand—it's a destination. Located in the heart of Savedi's 
+                Professor Chowk, our stall has become a favorite for those seeking high-quality, 
+                creative dessert bowls that look as good as they taste.
               </p>
               <div className={styles.specializations}>
                 {features.map((spec) => (
                   <div key={spec} className={styles.specItem}>
-                    <Coffee size={18} className={styles.icon} />
+                    <Utensils size={18} className={styles.icon} />
                     <span>{spec}</span>
                   </div>
                 ))}
@@ -49,12 +53,12 @@ export default function DessertVibes() {
             </div>
             <div className={styles.statsCard}>
               <div className={styles.stat}>
-                <span className={styles.statNum}>Tasty</span>
-                <span className={styles.statLabel}>Content Creator</span>
+                <span className={styles.statNum}>Savedi</span>
+                <span className={styles.statLabel}>Location</span>
               </div>
               <div className={styles.stat}>
-                <span className={styles.statNum}>100%</span>
-                <span className={styles.statLabel}>Aesthetic Focus</span>
+                <span className={styles.statNum}>Fresh</span>
+                <span className={styles.statLabel}>Daily Made</span>
               </div>
             </div>
           </div>
@@ -64,9 +68,9 @@ export default function DessertVibes() {
       <section className={styles.cta}>
         <div className="container">
           <div className={styles.ctaBox} style={{ background: '#f8f8f8', color: '#000' }}>
-            <h2>Are you a Restaurant Owner?</h2>
-            <p>Let's make your menu go viral.</p>
-            <Link href="/#contact" className={styles.ctaBtn}>Get Featured</Link>
+            <h2>Craving something sweet?</h2>
+            <p>Come visit us tonight at Professor Chowk, Savedi, Ahilyanagar.</p>
+            <a href="https://maps.google.com" target="_blank" className={styles.ctaBtn}>Get Directions</a>
           </div>
         </div>
       </section>

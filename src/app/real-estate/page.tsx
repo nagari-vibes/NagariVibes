@@ -1,5 +1,5 @@
 import React from 'react';
-import { Home, Building, Key, MapPin, Search, TrendingUp } from 'lucide-react';
+import { Home, Building, Key, MapPin, Search, TrendingUp, ArrowLeft } from 'lucide-react';
 import styles from '../nagari-vibes/NagariVibes.module.css';
 import Link from 'next/link';
 
@@ -15,6 +15,10 @@ export default function NagarRealEstate() {
 
   return (
     <main className={styles.page}>
+      <Link href="/" className={styles.backButton}>
+        <ArrowLeft size={20} />
+        <span>Back to Media Hub</span>
+      </Link>
       <section className={styles.hero} style={{ backgroundImage: "url('/logos/real-estate.png')", backgroundSize: '25%' }}>
         <div className={styles.heroOverlay} />
         <div className={`container ${styles.heroContent}`}>
