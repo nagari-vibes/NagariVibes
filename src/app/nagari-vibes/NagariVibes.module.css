@@ -297,8 +297,18 @@
 
 .awardsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 2rem;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+  .awardsGrid {
+    grid-template-columns: 1fr 1fr;
+    max-width: 100%;
+    gap: 2rem;
+  }
 }
 
 .awardCard {
@@ -486,6 +496,7 @@
   }
   .awardsGrid {
     grid-template-columns: 1fr;
+    max-width: 100%;
   }
   .awardCard {
     flex-direction: column;
