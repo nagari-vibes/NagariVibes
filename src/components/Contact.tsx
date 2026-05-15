@@ -40,11 +40,11 @@ export default function Contact() {
             <div className={styles.details}>
               <div>
                 <span className="mono">Email</span>
-                <p>hello@nagarivibes.com</p>
+                <p>ashishtribhuvan1525@gmail.com</p>
               </div>
               <div>
                 <span className="mono">Phone</span>
-                <p>+91 98765 43210</p>
+                <p>+91 84214 95454</p>
               </div>
               <div>
                 <span className="mono">Location</span>

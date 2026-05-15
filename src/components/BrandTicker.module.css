@@ -25,8 +25,8 @@
 }
 
 .tapeWrapper {
-  width: 200%;
-  left: -50%;
+  width: 140%;
+  left: -20%;
   position: relative;
   /* White Cotton Feel: Off-white with a subtle texture effect */
   background: #fdfdfd;
@@ -114,8 +114,8 @@
     letter-spacing: -1px;
   }
   .tapeWrapper {
-    width: 300%;
-    left: -100%;
+    width: 180%;
+    left: -40%;
     transform: rotate(-3deg);
     padding: 0.8rem 0;
   }
