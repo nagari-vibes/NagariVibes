@@ -56,6 +56,43 @@ export default function NagariVibes() {
         </div>
       </section>
 
+      {/* Achievements Section */}
+      <section className={styles.achievements}>
+        <div className="container">
+          <div className={styles.headerCentered}>
+            <h2 className={styles.sectionTitle}>Hall of Fame</h2>
+            <p>Recognized for excellence in digital content creation.</p>
+          </div>
+          <div className={styles.awardsGrid}>
+            <div className={styles.awardCard}>
+              <Trophy className={styles.awardIcon} size={56} />
+              <div className={styles.awardInfo}>
+                <span className={styles.awardPlace}>1st Prize (₹50,000)</span>
+                <h3>Wet N Joy Shirdi</h3>
+                <p>Official Reel Competition Winner</p>
+              </div>
+            </div>
+            <div className={styles.awardCard}>
+              <Star className={styles.awardIcon} size={56} />
+              <div className={styles.awardInfo}>
+                <span className={styles.awardPlace}>1st in Maharashtra</span>
+                <h3>Film City Mumbai</h3>
+                <p>National Reel Creation Contest</p>
+              </div>
+            </div>
+          </div>
+          
+          <div className={styles.brandTicker} style={{ marginTop: '4rem' }}>
+            <p className="mono" style={{ textAlign: 'center', marginBottom: '1rem', color: 'var(--muted)' }}>BRANDS WE'VE WORKED WITH</p>
+            <div className={styles.brandList}>
+              {brands.map((brand) => (
+                <span key={brand} className={styles.brandName}>{brand}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* About Section */}
       <section id="about" className={styles.about}>
         <div className="container">
@@ -117,43 +154,6 @@ export default function NagariVibes() {
                 <h3>{item}</h3>
               </div>
             ))}
-          </div>
-
-          <div className={styles.brandTicker}>
-            <p className="mono">BRANDS WE'VE WORKED WITH</p>
-            <div className={styles.brandList}>
-              {brands.map((brand) => (
-                <span key={brand} className={styles.brandName}>{brand}</span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Achievements Section */}
-      <section className={styles.achievements}>
-        <div className="container">
-          <div className={styles.headerCentered}>
-            <h2 className={styles.sectionTitle}>Hall of Fame</h2>
-            <p>Recognized for excellence in digital content creation.</p>
-          </div>
-          <div className={styles.awardsGrid}>
-            <div className={styles.awardCard}>
-              <Trophy className={styles.awardIcon} size={56} />
-              <div className={styles.awardInfo}>
-                <span className={styles.awardPlace}>1st Prize (₹50,000)</span>
-                <h3>Wet N Joy Shirdi</h3>
-                <p>Official Reel Competition Winner</p>
-              </div>
-            </div>
-            <div className={styles.awardCard}>
-              <Star className={styles.awardIcon} size={56} />
-              <div className={styles.awardInfo}>
-                <span className={styles.awardPlace}>1st in Maharashtra</span>
-                <h3>Film City Mumbai</h3>
-                <p>National Reel Creation Contest</p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
