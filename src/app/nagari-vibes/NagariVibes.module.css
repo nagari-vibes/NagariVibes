@@ -350,6 +350,10 @@
   object-position: 50% 93%;
 }
 
+.mumbaiImage {
+  object-position: 50% 15%;
+}
+
 .awardCard:hover .awardImage {
   transform: scale(1.05);
 }
