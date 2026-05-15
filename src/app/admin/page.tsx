@@ -251,10 +251,14 @@ export default function AdminDashboard() {
                           </span>
                         </td>
                         <td>
-                          <div style={{display: 'flex', gap: '0.5rem'}}>
-                            <button onClick={() => updateEntryStatus(entry.id, 'approved')} style={{background: '#00ff00', color: '#000', border: 'none', padding: '0.3rem 0.6rem', borderRadius: '4px', cursor: 'pointer', fontWeight: 'bold'}}>Approve</button>
-                            <button onClick={() => updateEntryStatus(entry.id, 'denied')} style={{background: '#ff3333', color: '#fff', border: 'none', padding: '0.3rem 0.6rem', borderRadius: '4px', cursor: 'pointer', fontWeight: 'bold'}}>Deny</button>
-                          </div>
+                          {(!entry.status || entry.status === 'pending') ? (
+                            <div style={{display: 'flex', gap: '0.5rem'}}>
+                              <button onClick={() => updateEntryStatus(entry.id, 'approved')} style={{background: '#00ff00', color: '#000', border: 'none', padding: '0.3rem 0.6rem', borderRadius: '4px', cursor: 'pointer', fontWeight: 'bold'}}>Approve</button>
+                              <button onClick={() => updateEntryStatus(entry.id, 'denied')} style={{background: '#ff3333', color: '#fff', border: 'none', padding: '0.3rem 0.6rem', borderRadius: '4px', cursor: 'pointer', fontWeight: 'bold'}}>Deny</button>
+                            </div>
+                          ) : (
+                            <span style={{ color: '#666', fontSize: '0.85rem', fontStyle: 'italic' }}>Action Taken</span>
+                          )}
                         </td>
                       </tr>
                     ))
