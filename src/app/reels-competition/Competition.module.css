@@ -26,6 +26,28 @@
   margin-bottom: 1rem;
 }
 
+.promoImageWrapper {
+  width: 90%;
+  margin: 0 auto 2rem;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+}
+
+.promoImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.contentSide {
+  width: 100%;
+}
+
 .accent {
   color: var(--primary);
   text-shadow: 0 0 20px var(--primary-glow);
@@ -44,7 +66,7 @@
   .splitLayout {
     flex-direction: row;
     align-items: flex-start;
-    gap: 2rem;
+    gap: 3rem;
     padding: 0 4rem 4rem;
     max-width: 1400px;
     margin: 0 auto;
@@ -54,9 +76,7 @@
     width: 45%;
     position: sticky;
     top: 120px;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid var(--glass-border);
+    margin: 0;
   }
 
   .promoImage {
