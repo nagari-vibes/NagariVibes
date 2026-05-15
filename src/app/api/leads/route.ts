@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import fs from 'fs/promises';
 import path from 'path';
 
+export const dynamic = 'force-dynamic';
 const dbPath = path.join(process.cwd(), 'db.json');
 
 async function getDb() {

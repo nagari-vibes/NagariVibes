@@ -42,7 +42,7 @@ export async function PUT(
     const db = await getDb();
     
     if (db.projects) {
-      const index = db.projects.findIndex((p: any) => p.id === id);
+      const index = db.projects.findIndex((p: any) => String(p.id) === String(id));
       if (index !== -1) {
         const slug = body.title ? body.title.toLowerCase().replace(/[^a-z0-9]+/g, '-') : id;
         const autoLink = `/projects/${slug}-${id}`;
