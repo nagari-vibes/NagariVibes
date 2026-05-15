@@ -4,6 +4,29 @@ import React from 'react';
 import styles from './Contact.module.css';
 
 export default function Contact() {
+  const [formData, setFormData] = React.useState({ name: '', email: '', message: '' });
+  const [status, setStatus] = React.useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('loading');
+    
+    try {
+      const res = await fetch('/api/leads', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+      
+      if (!res.ok) throw new Error();
+      
+      setStatus('success');
+      setFormData({ name: '', email: '', message: '' });
+    } catch (err) {
+      setStatus('error');
+    }
+  };
+
   return (
     <section id="contact" className={styles.contact}>
       <div className="container">
@@ -30,20 +53,23 @@ export default function Contact() {
             </div>
           </div>
 
-          <form className={styles.form}>
+          <form className={styles.form} onSubmit={handleSubmit}>
             <div className={styles.inputGroup}>
               <label htmlFor="name">Name</label>
-              <input type="text" id="name" placeholder="John Doe" />
+              <input required type="text" id="name" placeholder="John Doe" value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})} />
             </div>
             <div className={styles.inputGroup}>
               <label htmlFor="email">Email</label>
-              <input type="email" id="email" placeholder="john@example.com" />
+              <input required type="email" id="email" placeholder="john@example.com" value={formData.email} onChange={e => setFormData({...formData, email: e.target.value})} />
             </div>
             <div className={styles.inputGroup}>
               <label htmlFor="message">Message</label>
-              <textarea id="message" rows={5} placeholder="Tell us about your project..."></textarea>
+              <textarea required id="message" rows={5} placeholder="Tell us about your project..." value={formData.message} onChange={e => setFormData({...formData, message: e.target.value})}></textarea>
             </div>
-            <button type="submit" className={styles.submitBtn}>Send Message</button>
+            <button type="submit" className={styles.submitBtn} disabled={status === 'loading'}>
+              {status === 'loading' ? 'Sending...' : status === 'success' ? 'Message Sent!' : 'Send Message'}
+            </button>
+            {status === 'error' && <p style={{color: 'red', marginTop: '1rem'}}>Something went wrong. Please try again.</p>}
           </form>
         </div>
       </div>

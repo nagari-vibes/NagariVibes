@@ -23,9 +23,10 @@ interface CompetitionEntry {
 }
 
 export default function AdminDashboard() {
-  const [activeTab, setActiveTab] = useState<'projects' | 'entries'>('projects');
+  const [activeTab, setActiveTab] = useState<'projects' | 'entries' | 'leads'>('projects');
   const [entries, setEntries] = useState<CompetitionEntry[]>([]);
   const [projects, setProjects] = useState<Project[]>([]);
+  const [leads, setLeads] = useState<any[]>([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -60,6 +61,10 @@ export default function AdminDashboard() {
       fetch('/api/reels-competition')
         .then(res => res.json())
         .then(data => setEntries(data));
+        
+      fetch('/api/leads')
+        .then(res => res.json())
+        .then(data => setLeads(data));
     }
   }, [isLoggedIn]);
 
@@ -137,6 +142,7 @@ export default function AdminDashboard() {
             <div className={styles.tabs}>
               <button className={`${styles.tabBtn} ${activeTab === 'projects' ? styles.activeTab : ''}`} onClick={() => setActiveTab('projects')}>Projects</button>
               <button className={`${styles.tabBtn} ${activeTab === 'entries' ? styles.activeTab : ''}`} onClick={() => setActiveTab('entries')}>Reels Entries</button>
+              <button className={`${styles.tabBtn} ${activeTab === 'leads' ? styles.activeTab : ''}`} onClick={() => setActiveTab('leads')}>Contact Leads</button>
             </div>
           </div>
           <button className={styles.logoutBtn} onClick={() => setIsLoggedIn(false)}>
@@ -179,7 +185,7 @@ export default function AdminDashboard() {
               ))}
             </div>
           </>
-        ) : (
+        ) : activeTab === 'entries' ? (
           <div className={styles.entriesSection}>
             <div className={styles.projectsHeader}>
               <h2>Reels Competition Entries</h2>
@@ -211,6 +217,43 @@ export default function AdminDashboard() {
                         <td><a href={`https://instagram.com/${entry.handle.replace('@', '')}`} target="_blank" rel="noreferrer" className={styles.tableLink}>{entry.handle}</a></td>
                         <td><a href={`mailto:${entry.email}`} className={styles.tableLink}>{entry.email}</a></td>
                         <td><button onClick={() => setViewingVideo(entry.videoUrl)} className={styles.tableLink} style={{background: 'none', border: 'none', cursor: 'pointer', fontFamily: 'inherit', fontSize: '1rem'}}>View Reel ↗</button></td>
+                      </tr>
+                    ))
+                  )}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        ) : (
+          <div className={styles.entriesSection}>
+            <div className={styles.projectsHeader}>
+              <h2>Contact Form Leads</h2>
+              <span className={styles.entryCount}>{leads.length} Total</span>
+            </div>
+            <div className={styles.tableWrapper}>
+              <table className={styles.excelTable}>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Date</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Message</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {leads.length === 0 ? (
+                    <tr>
+                      <td colSpan={5} style={{ textAlign: 'center', padding: '2rem' }}>No leads found.</td>
+                    </tr>
+                  ) : (
+                    leads.map(lead => (
+                      <tr key={lead.id}>
+                        <td className="mono" style={{ fontSize: '0.8rem' }}>...{lead.id.slice(-6)}</td>
+                        <td>{new Date(lead.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })}</td>
+                        <td><strong>{lead.name}</strong></td>
+                        <td><a href={`mailto:${lead.email}`} className={styles.tableLink}>{lead.email}</a></td>
+                        <td style={{ maxWidth: '300px', whiteSpace: 'normal', color: '#ccc' }}>{lead.message}</td>
                       </tr>
                     ))
                   )}
