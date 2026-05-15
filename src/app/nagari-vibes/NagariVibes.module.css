@@ -335,7 +335,7 @@
 
 @media (min-width: 1024px) {
   .awardImageWrapper {
-    height: 320px;
+    height: 450px;
   }
 }
 
@@ -347,7 +347,7 @@
 }
 
 .wetnjoyImage {
-  object-position: 50% 60%;
+  object-position: 50% 50%;
 }
 
 .mumbaiImage {
