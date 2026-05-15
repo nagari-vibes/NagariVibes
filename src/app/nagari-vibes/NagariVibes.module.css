@@ -393,7 +393,8 @@
   }
   .heroLogoWrapper {
     display: block;
-    margin-bottom: 1.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
   }
   .heroLogo {
     width: 140px;
@@ -403,8 +404,8 @@
   .topBar {
     flex-direction: column;
     align-items: flex-start;
-    gap: 1.5rem;
-    margin-bottom: 1.5rem;
+    gap: 1rem;
+    margin-bottom: 0;
   }
   .title {
     font-size: clamp(2.5rem, 12vw, 4rem);
