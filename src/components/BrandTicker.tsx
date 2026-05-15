@@ -11,20 +11,22 @@ const brands = [
 export default function BrandTicker() {
   return (
     <section className={styles.brands}>
-      <div className={styles.brandTicker}>
-        <p className="mono">BRANDS WE'VE WORKED WITH</p>
+      <div className={styles.tapeWrapper}>
         <div className={styles.marqueeContainer}>
           <motion.div 
             className={styles.marquee}
-            animate={{ x: [0, -1000] }}
+            animate={{ x: [0, -1500] }}
             transition={{ 
-              duration: 20, 
+              duration: 30, 
               repeat: Infinity, 
               ease: "linear" 
             }}
           >
             {brands.map((brand, i) => (
-              <span key={`${brand}-${i}`} className={styles.brandName}>{brand}</span>
+              <React.Fragment key={`${brand}-${i}`}>
+                <span className={styles.brandName}>{brand}</span>
+                <span className={styles.separator}>✦</span>
+              </React.Fragment>
             ))}
           </motion.div>
         </div>
