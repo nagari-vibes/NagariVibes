@@ -41,7 +41,7 @@ export default function NagariVibes() {
           </div>
           
           <div className={styles.heroLogoWrapper}>
-            <Image src="/logos/nagari-vibes.png" alt="Nagari Vibes" width={140} height={140} className={styles.heroLogo} priority />
+            <Image src="/logos/logo-removebg-preview.png" alt="Nagari Vibes" width={140} height={140} className={styles.heroLogo} priority />
           </div>
 
           <h1 className={styles.title}>
