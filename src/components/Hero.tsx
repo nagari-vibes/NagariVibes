@@ -17,8 +17,8 @@ export default function Hero() {
         >
           <span className="mono">Digital Agency • Ahilyanagar</span>
           <h1 className={styles.title}>
-            ELEVATING YOUR <br />
-            <span className={styles.outline}>DIGITAL PRESENCE</span>
+            WHERE BRANDS MEET <br />
+            <span className={styles.outline}>THE RIGHT VIBES</span>
           </h1>
           <p className={styles.description}>
             We blend tactical strategy with premium design to create digital experiences that resonate and convert. From viral reels to brand architecture, we bring the vibe.
