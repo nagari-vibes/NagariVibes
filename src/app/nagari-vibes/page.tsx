@@ -65,19 +65,26 @@ export default function NagariVibes() {
           </div>
           <div className={styles.awardsGrid}>
             <div className={styles.awardCard}>
-              <Trophy className={styles.awardIcon} size={56} />
-              <div className={styles.awardInfo}>
-                <span className={styles.awardPlace}>1st Prize (₹50,000)</span>
-                <h3>Wet N Joy Shirdi</h3>
-                <p>Official Reel Competition Winner</p>
+              <div className={styles.awardImageWrapper}>
+                <Image src="/wetnjoy-win.jpeg" alt="Wet N Joy Win" fill className={styles.awardImage} />
+              </div>
+              <div className={styles.awardBody}>
+                <Trophy className={styles.awardIcon} size={48} />
+                <div className={styles.awardInfo}>
+                  <span className={styles.awardPlace}>1st Prize (₹50,000)</span>
+                  <h3>Wet N Joy Shirdi</h3>
+                  <p>Official Reel Competition Winner</p>
+                </div>
               </div>
             </div>
             <div className={styles.awardCard}>
-              <Star className={styles.awardIcon} size={56} />
-              <div className={styles.awardInfo}>
-                <span className={styles.awardPlace}>1st in Maharashtra</span>
-                <h3>Film City Mumbai</h3>
-                <p>National Reel Creation Contest</p>
+              <div className={styles.awardBody}>
+                <Star className={styles.awardIcon} size={48} />
+                <div className={styles.awardInfo}>
+                  <span className={styles.awardPlace}>1st in Maharashtra</span>
+                  <h3>Film City Mumbai</h3>
+                  <p>National Reel Creation Contest</p>
+                </div>
               </div>
             </div>
           </div>
