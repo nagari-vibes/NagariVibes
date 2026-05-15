@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { Home, Building, Key, MapPin, Search, TrendingUp, ArrowLeft } from 'lucide-react';
 import styles from '../nagari-vibes/NagariVibes.module.css';
 import Link from 'next/link';
@@ -25,16 +26,24 @@ export default function NagarRealEstate() {
             </Link>
             <div className={styles.badge}>Nagar Real Estate</div>
           </div>
+          
+          <div className={styles.heroLogoWrapper}>
+            <Image src="/logos/real-estate.png" alt="Nagar Real Estate" width={140} height={140} className={styles.heroLogo} priority />
+          </div>
+
           <h1 className={styles.title}>
-            THE FUTURE OF <span className={styles.accent}>PROPERTY</span> MARKETING
+            THE FUTURE OF <span className={styles.accent}>PROPERTY</span><br/> MARKETING
           </h1>
           <p className={styles.description}>
             Transforming how real estate is discovered in Ahilyanagar. We combine high-end visuals with strategic digital reach for premium developers.
           </p>
+          <div className={styles.heroActions}>
+            <Link href="/#contact" className={styles.primaryBtn}>Request a Proposal</Link>
+          </div>
         </div>
       </section>
 
-      <section className={styles.about}>
+      <section id="about" className={styles.about}>
         <div className="container">
           <div className={styles.aboutGrid}>
             <div className={styles.aboutText}>
@@ -47,20 +56,30 @@ export default function NagarRealEstate() {
               <div className={styles.specializations}>
                 {services.map((spec) => (
                   <div key={spec} className={styles.specItem}>
-                    <Building size={18} className={styles.icon} />
+                    <div className={styles.iconBox}>
+                      <Building size={16} className={styles.icon} />
+                    </div>
                     <span>{spec}</span>
                   </div>
                 ))}
               </div>
             </div>
-            <div className={styles.statsCard}>
-              <div className={styles.stat}>
+            
+            <div className={styles.bentoStats}>
+              <div className={`${styles.statCard} ${styles.statPrimary}`}>
+                <Home size={32} className={styles.socialIcon} />
                 <span className={styles.statNum}>Premium</span>
                 <span className={styles.statLabel}>Visual Standards</span>
               </div>
-              <div className={styles.stat}>
+              <div className={styles.statCard}>
+                <TrendingUp size={24} className={styles.socialIcon} />
                 <span className={styles.statNum}>Targeted</span>
                 <span className={styles.statLabel}>Investor Reach</span>
+              </div>
+              <div className={styles.statCard}>
+                <Key size={24} className={styles.socialIcon} />
+                <span className={styles.statNum}>100%</span>
+                <span className={styles.statLabel}>Exclusivity</span>
               </div>
             </div>
           </div>

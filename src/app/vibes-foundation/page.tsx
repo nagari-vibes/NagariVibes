@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { Heart, Globe, Users, Gift, ShieldCheck, Sparkles, ArrowLeft } from 'lucide-react';
 import styles from '../nagari-vibes/NagariVibes.module.css'; // Reusing the high-end layout system
 import Link from 'next/link';
@@ -25,16 +26,24 @@ export default function VibesFoundation() {
             </Link>
             <div className={styles.badge}>Vibes Foundation</div>
           </div>
+          
+          <div className={styles.heroLogoWrapper}>
+            <Image src="/logos/vibes-foundation.png" alt="Vibes Foundation" width={140} height={140} className={styles.heroLogo} priority />
+          </div>
+
           <h1 className={styles.title}>
-            CREATING AN <span className={styles.accent}>IMPACT</span> BEYOND MEDIA
+            CREATING AN <span className={styles.accent}>IMPACT</span><br/> BEYOND MEDIA
           </h1>
           <p className={styles.description}>
             The social heart of Vibes Media. Dedicated to giving back to the community and empowering the next generation of creators in Ahilyanagar.
           </p>
+          <div className={styles.heroActions}>
+            <Link href="/#contact" className={styles.primaryBtn}>Get Involved</Link>
+          </div>
         </div>
       </section>
 
-      <section className={styles.about}>
+      <section id="about" className={styles.about}>
         <div className="container">
           <div className={styles.aboutGrid}>
             <div className={styles.aboutText}>
@@ -47,20 +56,30 @@ export default function VibesFoundation() {
               <div className={styles.specializations}>
                 {initiatives.map((spec) => (
                   <div key={spec} className={styles.specItem}>
-                    <Heart size={18} className={styles.icon} />
+                    <div className={styles.iconBox}>
+                      <Heart size={16} className={styles.icon} />
+                    </div>
                     <span>{spec}</span>
                   </div>
                 ))}
               </div>
             </div>
-            <div className={styles.statsCard}>
-              <div className={styles.stat}>
+            
+            <div className={styles.bentoStats}>
+              <div className={`${styles.statCard} ${styles.statPrimary}`}>
+                <Globe size={32} className={styles.socialIcon} />
                 <span className={styles.statNum}>10+</span>
                 <span className={styles.statLabel}>Local Projects</span>
               </div>
-              <div className={styles.stat}>
+              <div className={styles.statCard}>
+                <Users size={24} className={styles.socialIcon} />
                 <span className={styles.statNum}>Community</span>
                 <span className={styles.statLabel}>First Approach</span>
+              </div>
+              <div className={styles.statCard}>
+                <Sparkles size={24} className={styles.socialIcon} />
+                <span className={styles.statNum}>100%</span>
+                <span className={styles.statLabel}>Non-Profit Action</span>
               </div>
             </div>
           </div>

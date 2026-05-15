@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { Coffee, Pizza, Utensils, Camera, Map, Star, ArrowLeft } from 'lucide-react';
 import styles from '../nagari-vibes/NagariVibes.module.css';
 import Link from 'next/link';
@@ -25,16 +26,24 @@ export default function DessertVibes() {
             </Link>
             <div className={styles.badge}>Dessert Vibes Stall</div>
           </div>
+          
+          <div className={styles.heroLogoWrapper}>
+            <Image src="/logos/dessert-vibes.png" alt="Dessert Vibes" width={140} height={140} className={styles.heroLogo} priority />
+          </div>
+
           <h1 className={styles.title}>
-            THE BEST <span className={styles.accent}>DESSERT BOWLS</span> IN THE CITY
+            THE BEST <span className={styles.accent}>DESSERT BOWLS</span><br/> IN THE CITY
           </h1>
           <p className={styles.description}>
             Visit us at Professor Chowk, Savedi. Experience the most aesthetic and delicious dessert bowls in Ahilyanagar, made fresh for you.
           </p>
+          <div className={styles.heroActions}>
+            <a href="https://maps.app.goo.gl/u6R5QBVaUE9qzfRo9" target="_blank" rel="noopener noreferrer" className={styles.primaryBtn}>Get Directions</a>
+          </div>
         </div>
       </section>
 
-      <section className={styles.about}>
+      <section id="about" className={styles.about}>
         <div className="container">
           <div className={styles.aboutGrid}>
             <div className={styles.aboutText}>
@@ -47,20 +56,30 @@ export default function DessertVibes() {
               <div className={styles.specializations}>
                 {features.map((spec) => (
                   <div key={spec} className={styles.specItem}>
-                    <Utensils size={18} className={styles.icon} />
+                    <div className={styles.iconBox}>
+                      <Utensils size={16} className={styles.icon} />
+                    </div>
                     <span>{spec}</span>
                   </div>
                 ))}
               </div>
             </div>
-            <div className={styles.statsCard}>
-              <div className={styles.stat}>
+            
+            <div className={styles.bentoStats}>
+              <div className={`${styles.statCard} ${styles.statPrimary}`}>
+                <Map size={32} className={styles.socialIcon} />
                 <span className={styles.statNum}>Savedi</span>
-                <span className={styles.statLabel}>Location</span>
+                <span className={styles.statLabel}>Prime Location</span>
               </div>
-              <div className={styles.stat}>
+              <div className={styles.statCard}>
+                <Star size={24} className={styles.socialIcon} />
                 <span className={styles.statNum}>Fresh</span>
-                <span className={styles.statLabel}>Daily Made</span>
+                <span className={styles.statLabel}>Daily Made Bowls</span>
+              </div>
+              <div className={styles.statCard}>
+                <Coffee size={24} className={styles.socialIcon} />
+                <span className={styles.statNum}>100%</span>
+                <span className={styles.statLabel}>Taste Guarantee</span>
               </div>
             </div>
           </div>

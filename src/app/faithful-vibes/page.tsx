@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { Church, Sunrise, BookOpen, Music, Sun, Shield, ArrowLeft } from 'lucide-react';
 import styles from '../nagari-vibes/NagariVibes.module.css';
 import Link from 'next/link';
@@ -25,16 +26,24 @@ export default function FaithfulVibes() {
             </Link>
             <div className={styles.badge}>Faithful Vibes</div>
           </div>
+          
+          <div className={styles.heroLogoWrapper}>
+            <Image src="/logos/faithful-vibes.png" alt="Faithful Vibes" width={140} height={140} className={styles.heroLogo} priority />
+          </div>
+
           <h1 className={styles.title}>
-            CELEBRATING <span className={styles.accent}>FAITH</span> & COMMUNITY
+            CELEBRATING <span className={styles.accent}>FAITH</span><br/> & COMMUNITY
           </h1>
           <p className={styles.description}>
             Connecting the spiritual heart of the city. We highlight the sacred traditions, events, and stories that bind our community together.
           </p>
+          <div className={styles.heroActions}>
+            <Link href="/#contact" className={styles.primaryBtn}>Share Your Story</Link>
+          </div>
         </div>
       </section>
 
-      <section className={styles.about}>
+      <section id="about" className={styles.about}>
         <div className="container">
           <div className={styles.aboutGrid}>
             <div className={styles.aboutText}>
@@ -47,20 +56,30 @@ export default function FaithfulVibes() {
               <div className={styles.specializations}>
                 {pillars.map((spec) => (
                   <div key={spec} className={styles.specItem}>
-                    <Sunrise size={18} className={styles.icon} />
+                    <div className={styles.iconBox}>
+                      <Sunrise size={16} className={styles.icon} />
+                    </div>
                     <span>{spec}</span>
                   </div>
                 ))}
               </div>
             </div>
-            <div className={styles.statsCard}>
-              <div className={styles.stat}>
+            
+            <div className={styles.bentoStats}>
+              <div className={`${styles.statCard} ${styles.statPrimary}`}>
+                <Church size={32} className={styles.socialIcon} />
                 <span className={styles.statNum}>Sacred</span>
                 <span className={styles.statLabel}>Storytelling</span>
               </div>
-              <div className={styles.stat}>
+              <div className={styles.statCard}>
+                <BookOpen size={24} className={styles.socialIcon} />
                 <span className={styles.statNum}>Unity</span>
                 <span className={styles.statLabel}>Driven Approach</span>
+              </div>
+              <div className={styles.statCard}>
+                <Shield size={24} className={styles.socialIcon} />
+                <span className={styles.statNum}>100%</span>
+                <span className={styles.statLabel}>Respectful Coverage</span>
               </div>
             </div>
           </div>
