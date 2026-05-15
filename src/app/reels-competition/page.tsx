@@ -120,6 +120,13 @@ export default function ReelsCompetition() {
     <main className={styles.main}>
       <Header />
       
+      <div className={styles.hero}>
+        <div className="container">
+          <h1 className={styles.title}>NAGARI VIBES <span className={styles.accent}>REELS CLASH</span></h1>
+          <p className={styles.subtitle}>Submit your hardest hitting reel. Max file size: 100MB.</p>
+        </div>
+      </div>
+
       <div className={styles.splitLayout}>
         <div className={styles.promoImageWrapper}>
           <img 
@@ -130,13 +137,6 @@ export default function ReelsCompetition() {
         </div>
 
         <div className={styles.contentSide}>
-          <div className={styles.hero}>
-            <div className="container">
-              <h1 className={styles.title}>NAGARI VIBES <span className={styles.accent}>REELS CLASH</span></h1>
-              <p className={styles.subtitle}>Submit your hardest hitting reel. Max file size: 100MB.</p>
-            </div>
-          </div>
-
           <div className={styles.formContainer}>
             {isSuccess ? (
               <div className={styles.successState}>
