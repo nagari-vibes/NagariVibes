@@ -23,11 +23,16 @@ export default function Header() {
   useEffect(() => {
     if (isOpen || isDrawerOpen) {
       document.body.style.overflow = 'hidden';
+      // iOS Safari specific fix
+      document.body.style.position = 'fixed';
+      document.body.style.width = '100%';
     } else {
       document.body.style.overflow = 'unset';
+      document.body.style.position = 'static';
     }
     return () => {
       document.body.style.overflow = 'unset';
+      document.body.style.position = 'static';
     };
   }, [isOpen, isDrawerOpen]);
 
@@ -63,9 +68,11 @@ export default function Header() {
           <Link href="/#contact" className={styles.cta} onClick={() => setIsOpen(false)}>Get in Touch</Link>
         </nav>
 
-        <button className={styles.menuButton} onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        {!isDrawerOpen && (
+          <button className={styles.menuButton} onClick={() => setIsOpen(!isOpen)}>
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        )}
       </div>
 
       {/* Brands Drawer Overlay */}
