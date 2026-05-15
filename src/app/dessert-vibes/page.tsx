@@ -18,11 +18,13 @@ export default function DessertVibes() {
       <section className={styles.hero} style={{ backgroundImage: "url('/logos/dessert-vibes.png')", backgroundSize: '25%' }}>
         <div className={styles.heroOverlay} />
         <div className={`container ${styles.heroContent}`}>
-          <Link href="/" className={styles.backButton}>
-            <ArrowLeft size={18} />
-            <span>Back to Hub</span>
-          </Link>
-          <div className={styles.badge}>Dessert Vibes Stall</div>
+          <div className={styles.topBar}>
+            <Link href="/" className={styles.backButton}>
+              <ArrowLeft size={18} />
+              <span>Back to Hub</span>
+            </Link>
+            <div className={styles.badge}>Dessert Vibes Stall</div>
+          </div>
           <h1 className={styles.title}>
             THE BEST <span className={styles.accent}>DESSERT BOWLS</span> IN THE CITY
           </h1>
@@ -70,7 +72,7 @@ export default function DessertVibes() {
           <div className={styles.ctaBox} style={{ background: '#f8f8f8', color: '#000' }}>
             <h2>Craving something sweet?</h2>
             <p>Come visit us tonight at Professor Chowk, Savedi, Ahilyanagar.</p>
-            <a href="https://maps.google.com" target="_blank" className={styles.ctaBtn}>Get Directions</a>
+            <a href="https://maps.app.goo.gl/u6R5QBVaUE9qzfRo9" target="_blank" rel="noopener noreferrer" className={styles.ctaBtn}>Get Directions</a>
           </div>
         </div>
       </section>
