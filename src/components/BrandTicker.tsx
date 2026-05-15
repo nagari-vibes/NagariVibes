@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import styles from './BrandTicker.module.css';
 
 const brands = [
-  "Paytm", "Redtape", "Noise", "Prestige", "Local Cafés", "Startup & Local Businesses"
+  "Paytm", "Redtape", "Noise", "Prestige"
 ];
 
 export default function BrandTicker() {
