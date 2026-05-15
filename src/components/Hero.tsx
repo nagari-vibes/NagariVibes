@@ -29,10 +29,6 @@ export default function Hero() {
           </div>
         </motion.div>
       </div>
-      
-      <div className={styles.scrollIndicator}>
-        <div className={styles.mouse}></div>
-      </div>
     </section>
   );
 }
