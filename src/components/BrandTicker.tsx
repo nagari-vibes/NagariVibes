@@ -5,25 +5,28 @@ import { motion } from 'framer-motion';
 import styles from './BrandTicker.module.css';
 
 const brands = [
-  "Paytm", "Redtape", "Noise", "Prestige", "Local Cafés", "Startup & Local Businesses",
   "Paytm", "Redtape", "Noise", "Prestige", "Local Cafés", "Startup & Local Businesses"
 ];
 
 export default function BrandTicker() {
+  // Triple the items to ensure seamless flow on all screen sizes
+  const items = [...brands, ...brands, ...brands];
+
   return (
     <section className={styles.brands}>
       <div className={styles.tapeWrapper}>
         <div className={styles.marqueeContainer}>
           <motion.div 
             className={styles.marquee}
-            animate={{ x: [0, -1500] }}
+            animate={{ x: [0, "-33.33%"] }}
             transition={{ 
-              duration: 30, 
+              duration: 20, 
               repeat: Infinity, 
-              ease: "linear" 
+              ease: "linear",
+              repeatType: "loop"
             }}
           >
-            {brands.map((brand, i) => (
+            {items.map((brand, i) => (
               <React.Fragment key={`${brand}-${i}`}>
                 <span className={styles.brandName}>{brand}</span>
                 <span className={styles.separator}>✦</span>
