@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Menu, X, Grid, ChevronRight } from 'lucide-react';
+import { Menu, X, Layers, ChevronRight } from 'lucide-react';
 import styles from './Header.module.css';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -53,7 +53,7 @@ export default function Header() {
             onClick={() => setIsDrawerOpen(true)}
             aria-label="Open Brands Menu"
           >
-            <Grid size={24} />
+            <Layers size={24} />
           </button>
           
           <Link href="/" className={styles.logo}>
