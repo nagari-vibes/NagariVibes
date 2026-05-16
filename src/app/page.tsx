@@ -1,37 +1,37 @@
+import { promises as fs } from 'fs';
+import path from 'path';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
-import CompetitionPromo from '@/components/CompetitionPromo';
+import CompetitionBanner from '@/components/CompetitionBanner';
 import HallOfFame from '@/components/HallOfFame';
 import BrandTicker from '@/components/BrandTicker';
 import Services from '@/components/Services';
 import Projects from '@/components/Projects';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
-import fs from 'fs/promises';
-import path from 'path';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
-async function getDb() {
+async function getSettings() {
   try {
     const dbPath = path.join(process.cwd(), 'db.json');
     const data = await fs.readFile(dbPath, 'utf8');
-    return JSON.parse(data);
+    const db = JSON.parse(data);
+    return db.settings;
   } catch (error) {
-    return {};
+    return { showCompetitionBanner: true };
   }
 }
 
 export default async function Home() {
-  const db = await getDb();
-  const showCompetition = db.settings?.competitionEnabled ?? true;
+  const settings = await getSettings();
 
   return (
     <main>
       <Header />
       <Hero />
-      {showCompetition && <CompetitionPromo />}
+      {settings.showCompetitionBanner && <CompetitionBanner />}
       <HallOfFame />
       <BrandTicker />
       <Services />

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import styles from './Admin.module.css';
-import { Plus, Trash2, Edit2, LogOut } from 'lucide-react';
+import { Plus, Trash2, Edit2, LogOut, Settings as SettingsIcon, Flag } from 'lucide-react';
 
 interface Project {
   id: string;
@@ -30,7 +30,7 @@ export default function AdminDashboard() {
   const [entries, setEntries] = useState<CompetitionEntry[]>([]);
   const [projects, setProjects] = useState<Project[]>([]);
   const [leads, setLeads] = useState<any[]>([]);
-  const [settings, setSettings] = useState<any>({ competitionEnabled: true });
+  const [settings, setSettings] = useState({ showCompetitionBanner: true });
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -76,6 +76,18 @@ export default function AdminDashboard() {
     }
   }, [isLoggedIn]);
 
+  const toggleBanner = async () => {
+    const newVal = !settings.showCompetitionBanner;
+    const res = await fetch('/api/settings', {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ showCompetitionBanner: newVal })
+    });
+    if (res.ok) {
+      setSettings({ ...settings, showCompetitionBanner: newVal });
+    }
+  };
+
   const deleteProject = async (id: string) => {
     if (confirm('Are you sure?')) {
       await fetch(`/api/projects/${id}`, { method: 'DELETE' });
@@ -99,20 +111,6 @@ export default function AdminDashboard() {
       }
     } catch (err) {
       console.error('Failed to update status', err);
-    }
-  };
-
-  const toggleCompetition = async () => {
-    const newValue = !settings.competitionEnabled;
-    try {
-      await fetch('/api/settings', {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ competitionEnabled: newValue })
-      });
-      setSettings({ ...settings, competitionEnabled: newValue });
-    } catch (err) {
-      console.error('Failed to update settings', err);
     }
   };
 
@@ -181,28 +179,11 @@ export default function AdminDashboard() {
           <div className={styles.headerLeft}>
             <h1 className="mono">Control Center</h1>
             <div className={styles.tabs}>
-              <button className={activeTab === 'projects' ? styles.activeTab : ''} onClick={() => setActiveTab('projects')}>Projects</button>
-              <button className={activeTab === 'entries' ? styles.activeTab : ''} onClick={() => setActiveTab('entries')}>Reels Competition</button>
-              <button className={activeTab === 'leads' ? styles.activeTab : ''} onClick={() => setActiveTab('leads')}>Contact Leads</button>
-              <button className={activeTab === 'settings' ? styles.activeTab : ''} onClick={() => setActiveTab('settings')}>Settings</button>
+              <button className={`${styles.tabBtn} ${activeTab === 'projects' ? styles.activeTab : ''}`} onClick={() => setActiveTab('projects')}>Projects</button>
+              <button className={`${styles.tabBtn} ${activeTab === 'entries' ? styles.activeTab : ''}`} onClick={() => setActiveTab('entries')}>Reels Entries</button>
+              <button className={`${styles.tabBtn} ${activeTab === 'leads' ? styles.activeTab : ''}`} onClick={() => setActiveTab('leads')}>Contact Leads</button>
+              <button className={`${styles.tabBtn} ${activeTab === 'settings' ? styles.activeTab : ''}`} onClick={() => setActiveTab('settings')}>Settings</button>
             </div>
-
-            {activeTab === 'settings' && (
-              <div className={styles.settingsSection}>
-                <div className={styles.settingCard}>
-                  <div className={styles.settingInfo}>
-                    <h3>Reels Competition Promo</h3>
-                    <p>Show/Hide the competition banner on the main homepage.</p>
-                  </div>
-                  <button 
-                    className={settings.competitionEnabled ? styles.toggleOn : styles.toggleOff}
-                    onClick={toggleCompetition}
-                  >
-                    {settings.competitionEnabled ? 'ENABLED' : 'DISABLED'}
-                  </button>
-                </div>
-              </div>
-            )}
           </div>
           <button className={styles.logoutBtn} onClick={() => setIsLoggedIn(false)}>
             <LogOut size={18} /> Logout
@@ -313,7 +294,7 @@ export default function AdminDashboard() {
               </table>
             </div>
           </div>
-        ) : (
+        ) : activeTab === 'leads' ? (
           <div className={styles.entriesSection}>
             <div className={styles.projectsHeader}>
               <h2>Contact Form Leads</h2>
@@ -348,6 +329,29 @@ export default function AdminDashboard() {
                   )}
                 </tbody>
               </table>
+            </div>
+          </div>
+        ) : (
+          <div className={styles.settingsSection}>
+            <div className={styles.projectsHeader}>
+              <h2>System Settings</h2>
+            </div>
+            <div className={styles.settingsCard}>
+              <div className={styles.settingItem}>
+                <div className={styles.settingInfo}>
+                  <div className={styles.settingHeader}>
+                    <Flag className={styles.settingIcon} />
+                    <h3>Competition Feature Flag</h3>
+                  </div>
+                  <p>Toggle this to show or hide the Reels Competition banner on the main landing page.</p>
+                </div>
+                <div 
+                  className={`${styles.toggle} ${settings.showCompetitionBanner ? styles.toggleActive : ''}`}
+                  onClick={toggleBanner}
+                >
+                  <div className={styles.toggleKnob}></div>
+                </div>
+              </div>
             </div>
           </div>
         )}
