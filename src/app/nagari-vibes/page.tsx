@@ -49,7 +49,7 @@ export default function NagariVibes() {
             The #1 digital media network dedicated to showcasing the lifestyle, food, travel, events, and vibrant youth culture of our city.
           </p>
           <div className={styles.heroActions}>
-            <a href="#about" className={styles.primaryBtn}>Explore Media Kit</a>
+            <a href="https://www.instagram.com/nagari_vibes_" target="_blank" rel="noopener noreferrer" className={styles.primaryBtn}>Explore Media Kit</a>
           </div>
         </div>
       </section>
@@ -124,7 +124,7 @@ export default function NagariVibes() {
           <div className={styles.ctaBox}>
             <h2>Ready to go viral?</h2>
             <p>Leverage the biggest digital community in Ahilyanagar.</p>
-            <Link href="/#contact" className={styles.ctaBtn}>Start a Campaign</Link>
+            <a href="https://www.instagram.com/nagari_vibes_" target="_blank" rel="noopener noreferrer" className={styles.ctaBtn}>Start a Campaign</a>
           </div>
         </div>
       </section>

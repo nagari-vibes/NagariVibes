@@ -17,7 +17,7 @@ export default function Footer() {
           <div className={styles.links}>
             <div className={styles.linkGroup}>
               <span className="mono">Social</span>
-              <a href="https://www.instagram.com/nagari_vibes_" target="_blank" rel="noopener noreferrer">Instagram</a>
+              <a href="https://www.instagram.com/vibes_media____" target="_blank" rel="noopener noreferrer">Instagram</a>
               <a href="#">LinkedIn</a>
               <a href="#">Twitter</a>
             </div>

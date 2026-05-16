@@ -38,7 +38,7 @@ export default function FaithfulVibes() {
             Connecting the spiritual heart of the city. We highlight the sacred traditions, events, and stories that bind our community together.
           </p>
           <div className={styles.heroActions}>
-            <Link href="/#contact" className={styles.primaryBtn}>Share Your Story</Link>
+            <a href="https://www.instagram.com/faithful_.vibes_" target="_blank" rel="noopener noreferrer" className={styles.primaryBtn}>Share Your Story</a>
           </div>
         </div>
       </section>
@@ -91,7 +91,7 @@ export default function FaithfulVibes() {
           <div className={styles.ctaBox} style={{ background: '#1a1a1a', color: '#fff', border: '1px solid var(--primary)' }}>
             <h2>Share Your Journey</h2>
             <p>Connect your community with the city.</p>
-            <Link href="/#contact" className={styles.ctaBtn} style={{ background: 'var(--primary)', color: '#000' }}>Contact Us</Link>
+            <a href="https://www.instagram.com/faithful_.vibes_" target="_blank" rel="noopener noreferrer" className={styles.ctaBtn} style={{ background: 'var(--primary)', color: '#000' }}>Contact Us</a>
           </div>
         </div>
       </section>

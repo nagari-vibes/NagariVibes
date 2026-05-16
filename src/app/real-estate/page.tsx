@@ -38,7 +38,7 @@ export default function NagarRealEstate() {
             Transforming how real estate is discovered in Ahilyanagar. We combine high-end visuals with strategic digital reach for premium developers.
           </p>
           <div className={styles.heroActions}>
-            <Link href="/#contact" className={styles.primaryBtn}>Request a Proposal</Link>
+            <a href="https://www.instagram.com/nagar_real_estate_" target="_blank" rel="noopener noreferrer" className={styles.primaryBtn}>Request a Proposal</a>
           </div>
         </div>
       </section>
@@ -91,7 +91,7 @@ export default function NagarRealEstate() {
           <div className={styles.ctaBox} style={{ background: '#111', color: '#fff', border: '1px solid #333' }}>
             <h2 style={{ color: 'var(--primary)' }}>Market Your Project</h2>
             <p>Elevate your real estate brand with our production house.</p>
-            <Link href="/#contact" className={styles.ctaBtn} style={{ background: 'var(--primary)', color: '#000' }}>Request a Proposal</Link>
+            <a href="https://www.instagram.com/nagar_real_estate_" target="_blank" rel="noopener noreferrer" className={styles.ctaBtn} style={{ background: 'var(--primary)', color: '#000' }}>Request a Proposal</a>
           </div>
         </div>
       </section>

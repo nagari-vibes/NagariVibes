@@ -38,7 +38,7 @@ export default function VibesFoundation() {
             The social heart of Vibes Media. Dedicated to giving back to the community and empowering the next generation of creators in Ahilyanagar.
           </p>
           <div className={styles.heroActions}>
-            <Link href="/#contact" className={styles.primaryBtn}>Get Involved</Link>
+            <a href="https://www.instagram.com/vibes_foundation_" target="_blank" rel="noopener noreferrer" className={styles.primaryBtn}>Get Involved</a>
           </div>
         </div>
       </section>
@@ -91,7 +91,7 @@ export default function VibesFoundation() {
           <div className={styles.ctaBox} style={{ background: '#eee', color: '#000' }}>
             <h2>Partner for Purpose</h2>
             <p>Do you have a cause that needs the Vibes reach?</p>
-            <Link href="/#contact" className={styles.ctaBtn}>Get Involved</Link>
+            <a href="https://www.instagram.com/vibes_foundation_" target="_blank" rel="noopener noreferrer" className={styles.ctaBtn}>Get Involved</a>
           </div>
         </div>
       </section>

@@ -226,7 +226,7 @@ export default function ReelsCompetition() {
                 <div className={styles.row}>
                   <div className={styles.inputGroup}>
                     <label>Instagram ID</label>
-                    <input required type="text" placeholder="@nagari_vibes_" value={formData.handle} onChange={e => setFormData({...formData, handle: e.target.value})} />
+                    <input required type="text" placeholder="@nagarivibes" value={formData.handle} onChange={e => setFormData({...formData, handle: e.target.value})} />
                   </div>
                   <div className={styles.inputGroup}>
                     <label>Email Address</label>

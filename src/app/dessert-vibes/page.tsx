@@ -38,7 +38,7 @@ export default function DessertVibes() {
             Visit us at Professor Chowk, Savedi. Experience the most aesthetic and delicious dessert bowls in Ahilyanagar, made fresh for you.
           </p>
           <div className={styles.heroActions}>
-            <a href="https://maps.app.goo.gl/u6R5QBVaUE9qzfRo9" target="_blank" rel="noopener noreferrer" className={styles.primaryBtn}>Get Directions</a>
+            <a href="https://www.instagram.com/dessert_vibes__" target="_blank" rel="noopener noreferrer" className={styles.primaryBtn}>Explore Sweet Bowls</a>
           </div>
         </div>
       </section>
@@ -91,7 +91,7 @@ export default function DessertVibes() {
           <div className={styles.ctaBox} style={{ background: '#f8f8f8', color: '#000' }}>
             <h2>Craving something sweet?</h2>
             <p>Come visit us tonight at Professor Chowk, Savedi, Ahilyanagar.</p>
-            <a href="https://maps.app.goo.gl/u6R5QBVaUE9qzfRo9" target="_blank" rel="noopener noreferrer" className={styles.ctaBtn}>Get Directions</a>
+            <a href="https://www.instagram.com/dessert_vibes__" target="_blank" rel="noopener noreferrer" className={styles.ctaBtn}>Visit Our Instagram</a>
           </div>
         </div>
       </section>
