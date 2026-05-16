@@ -125,13 +125,7 @@ export default function ReelsCompetition() {
       
       <div className={styles.hero}>
         <div className="container">
-          <h1 className={styles.title}>Show Your <span className={styles.accent}>Ahilyanagar Vibes</span> <br /> To The World 🌍🔥</h1>
-          <p className={styles.subtitle}>
-            {step === 'info' && "Step 1: Enter your creator details to begin."}
-            {step === 'payment' && "Step 2: Complete the ₹499 entry fee payment."}
-            {step === 'upload' && "Step 3: Upload your hardest hitting reel."}
-            {step === 'success' && "Submission Secured. Good luck!"}
-          </p>
+          <h1 className={styles.title}>Show Your <span className={styles.accent}>Ahilyanagar Vibes</span> <br /> To The World</h1>
         </div>
       </div>
 
