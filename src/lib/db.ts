@@ -3,6 +3,8 @@ import path from 'path';
 
 const dbPath = path.join(process.cwd(), 'db.json');
 
+export const version = '1.0.0';
+
 export async function getDb() {
   try {
     const data = await fs.readFile(dbPath, 'utf8');
