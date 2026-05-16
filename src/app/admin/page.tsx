@@ -143,11 +143,11 @@ export default function AdminDashboard() {
           <h1 className="mono" style={{ marginBottom: '2rem' }}>Admin Access</h1>
           <div className={styles.inputGroup}>
             <label>Username</label>
-            <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+            <input required type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
           </div>
           <div className={styles.inputGroup}>
             <label>Password</label>
-            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+            <input required type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
           </div>
           <button type="submit" className={styles.loginBtn}>Enter Dashboard</button>
         </form>
@@ -338,7 +338,7 @@ export default function AdminDashboard() {
               </div>
               <div className={styles.inputGroup}>
                 <label>Description</label>
-                <input type="text" value={formData.description} onChange={e => setFormData({...formData, description: e.target.value})} />
+                <input required type="text" value={formData.description} onChange={e => setFormData({...formData, description: e.target.value})} />
               </div>
               <div className={styles.checkboxGroup}>
                 <input type="checkbox" id="featured" checked={formData.featured} onChange={e => setFormData({...formData, featured: e.target.checked})} />
