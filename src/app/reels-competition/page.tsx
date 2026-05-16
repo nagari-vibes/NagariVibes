@@ -189,31 +189,31 @@ export default function ReelsCompetition() {
                   </ul>
                 </div>
               </div>
-
-              <div className={styles.rulesSection}>
-                <div className={styles.rulesHeader}>
-                  <ScrollText />
-                  <h2>CONTEST RULES</h2>
-                </div>
-                <div className={styles.rulesGrid}>
-                  <div className={styles.rule}><span>1.</span> Reel फक्त Ahilyanagar related असावी.</div>
-                  <div className={styles.rule}><span>2.</span> Duration: 30 sec – 90 sec.</div>
-                  <div className={styles.rule}><span>3.</span> Quality: Minimum 1080p HD.</div>
-                  <div className={styles.rule}><span>4.</span> Original content mandatory.</div>
-                  <div className={styles.rule}><span>5.</span> No abusive / vulgar content.</div>
-                  <div className={styles.rule}><span>6.</span> Upload on your own Instagram.</div>
-                  <div className={styles.rule}><span>7.</span> #NagariVibes #AhilyanagarVibes compulsory.</div>
-                  <div className={styles.rule}><span>8.</span> Iconic places (Fort, Mahal) = Extra Preference.</div>
-                  <div className={styles.rule}><span>9.</span> Collaborations/Teams are allowed.</div>
-                  <div className={styles.rule}><span>10.</span> Deadlines are strictly enforced.</div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
       </div>
 
       <div className={styles.splitLayout}>
+        <div className={styles.rulesSection}>
+          <div className={styles.rulesHeader}>
+            <ScrollText />
+            <h2>CONTEST RULES</h2>
+          </div>
+          <div className={styles.rulesGrid}>
+            <div className={styles.rule}><span>1.</span> Reel फक्त Ahilyanagar related असावी.</div>
+            <div className={styles.rule}><span>2.</span> Duration: 30 sec – 90 sec.</div>
+            <div className={styles.rule}><span>3.</span> Quality: Minimum 1080p HD.</div>
+            <div className={styles.rule}><span>4.</span> Original content mandatory.</div>
+            <div className={styles.rule}><span>5.</span> No abusive / vulgar content.</div>
+            <div className={styles.rule}><span>6.</span> Upload on your own Instagram.</div>
+            <div className={styles.rule}><span>7.</span> #NagariVibes #AhilyanagarVibes compulsory.</div>
+            <div className={styles.rule}><span>8.</span> Iconic places (Fort, Mahal) = Extra Preference.</div>
+            <div className={styles.rule}><span>9.</span> Collaborations/Teams are allowed.</div>
+            <div className={styles.rule}><span>10.</span> Deadlines are strictly enforced.</div>
+          </div>
+        </div>
+
         <div className={styles.contentSide}>
           <div className={styles.formContainer}>
             {step === 'info' && (

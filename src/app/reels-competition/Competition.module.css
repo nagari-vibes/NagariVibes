@@ -100,9 +100,22 @@
   }
 
   .splitLayout {
-    padding: 0 2rem 8rem;
-    max-width: 800px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 4rem;
+    padding: 0 4rem 8rem;
+    max-width: 1400px;
     margin: 0 auto;
+  }
+
+  .rulesSection {
+    flex: 1;
+    margin: 0;
+  }
+
+  .contentSide {
+    flex: 1;
   }
 
   .promoImage {
