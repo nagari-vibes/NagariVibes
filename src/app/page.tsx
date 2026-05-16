@@ -7,10 +7,21 @@ import Services from '@/components/Services';
 import Projects from '@/components/Projects';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
-import { getDb } from '@/lib/db'; // Main DB
+import fs from 'fs/promises';
+import path from 'path';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
+
+async function getDb() {
+  try {
+    const dbPath = path.join(process.cwd(), 'db.json');
+    const data = await fs.readFile(dbPath, 'utf8');
+    return JSON.parse(data);
+  } catch (error) {
+    return {};
+  }
+}
 
 export default async function Home() {
   const db = await getDb();

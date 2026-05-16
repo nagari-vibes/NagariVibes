@@ -1,5 +1,21 @@
 import { NextResponse } from 'next/server';
-import { getDb, saveDb } from '@/lib/db'; // Resolved with alias
+import fs from 'fs/promises';
+import path from 'path';
+
+const dbPath = path.join(process.cwd(), 'db.json');
+
+async function getDb() {
+  try {
+    const data = await fs.readFile(dbPath, 'utf8');
+    return JSON.parse(data);
+  } catch (error) {
+    return {};
+  }
+}
+
+async function saveDb(db: any) {
+  await fs.writeFile(dbPath, JSON.stringify(db, null, 2), 'utf8');
+}
 
 export async function GET() {
   try {
