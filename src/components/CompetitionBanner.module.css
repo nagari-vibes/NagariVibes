@@ -148,12 +148,6 @@
   height: 100%;
   object-fit: contain;
   filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.2));
-  transform: rotate(5deg);
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.bannerCard:hover .highlightImg {
-  transform: rotate(0deg) scale(1.05);
 }
 
 @media (max-width: 1024px) {
