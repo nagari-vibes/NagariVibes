@@ -39,12 +39,6 @@ export default function CompetitionBanner() {
               </div>
             </div>
           </div>
-          <div className={styles.visual}>
-            <div className={styles.videoIconWrapper}>
-              <Video size={48} className={styles.videoIcon} />
-            </div>
-            <div className={styles.glow}></div>
-          </div>
         </motion.div>
       </div>
     </section>

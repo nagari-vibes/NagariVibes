@@ -113,45 +113,6 @@
   color: #fff;
 }
 
-.visual {
-  width: 180px;
-  height: 180px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-.videoIconWrapper {
-  width: 100px;
-  height: 100px;
-  background: rgba(212, 175, 55, 0.1);
-  border: 1px solid var(--primary);
-  border-radius: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--primary);
-  transform: rotate(15deg);
-  animation: float 4s ease-in-out infinite;
-  z-index: 2;
-}
-
-.glow {
-  position: absolute;
-  width: 150px;
-  height: 150px;
-  background: var(--primary);
-  filter: blur(80px);
-  opacity: 0.3;
-  z-index: 1;
-}
-
-@keyframes float {
-  0%, 100% { transform: rotate(15deg) translateY(0); }
-  50% { transform: rotate(10deg) translateY(-10px); }
-}
-
 @media (max-width: 1024px) {
   .bannerCard {
     flex-direction: column;
@@ -170,9 +131,5 @@
   .actions {
     flex-direction: column;
     gap: 1.5rem;
-  }
-
-  .visual {
-    margin-top: 2rem;
   }
 }
