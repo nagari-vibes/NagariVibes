@@ -32,3 +32,19 @@ export async function PUT(request: Request, { params }: { params: Promise<{ id: 
     return NextResponse.json({ error: 'Failed to update entry' }, { status: 500 });
   }
 }
+
+export async function DELETE(request: Request, { params }: { params: Promise<{ id: string }> }) {
+  try {
+    const { id } = await params;
+    const db = await getDb();
+    
+    if (!db.competitionEntries) return NextResponse.json({ error: 'No entries' }, { status: 404 });
+    
+    db.competitionEntries = db.competitionEntries.filter((e: any) => e.id !== id);
+    await saveDb(db);
+    
+    return NextResponse.json({ success: true });
+  } catch (error) {
+    return NextResponse.json({ error: 'Failed to delete entry' }, { status: 500 });
+  }
+}

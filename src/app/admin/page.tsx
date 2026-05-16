@@ -19,6 +19,7 @@ interface CompetitionEntry {
   handle: string;
   email: string;
   phone?: string;
+  utr: string;
   videoUrl: string;
   createdAt: string;
   status?: 'approved' | 'denied' | 'pending';
@@ -79,12 +80,18 @@ export default function AdminDashboard() {
 
   const updateEntryStatus = async (id: string, status: 'approved' | 'denied') => {
     try {
-      await fetch(`/api/reels-competition/${id}`, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ status })
-      });
-      setEntries(entries.map(e => e.id === id ? { ...e, status } : e));
+      if (status === 'denied') {
+        if (!confirm('Denying this entry will permanently DELETE it. Proceed?')) return;
+        await fetch(`/api/reels-competition/${id}`, { method: 'DELETE' });
+        setEntries(entries.filter(e => e.id !== id));
+      } else {
+        await fetch(`/api/reels-competition/${id}`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ status })
+        });
+        setEntries(entries.map(e => e.id === id ? { ...e, status } : e));
+      }
     } catch (err) {
       console.error('Failed to update status', err);
     }
@@ -215,6 +222,7 @@ export default function AdminDashboard() {
                     <th>Creator Name</th>
                     <th>IG Handle</th>
                     <th>Email / Phone</th>
+                    <th>UTR Number</th>
                     <th>Video File</th>
                     <th>Status</th>
                     <th>Actions</th>
@@ -223,7 +231,7 @@ export default function AdminDashboard() {
                 <tbody>
                   {entries.length === 0 ? (
                     <tr>
-                      <td colSpan={6} style={{ textAlign: 'center', padding: '2rem' }}>No entries found.</td>
+                      <td colSpan={8} style={{ textAlign: 'center', padding: '2rem' }}>No entries found.</td>
                     </tr>
                   ) : (
                     entries.map(entry => (
@@ -236,6 +244,7 @@ export default function AdminDashboard() {
                           <a href={`mailto:${entry.email}`} className={styles.tableLink} style={{display: 'block'}}>{entry.email}</a>
                           {entry.phone && <span className="mono" style={{fontSize: '0.8rem', color: '#aaa'}}>{entry.phone}</span>}
                         </td>
+                        <td className="mono" style={{ color: 'var(--primary)', fontWeight: 'bold' }}>{entry.utr}</td>
                         <td><button onClick={() => setViewingVideo(entry.videoUrl)} className={styles.tableLink} style={{background: 'none', border: 'none', cursor: 'pointer', fontFamily: 'inherit', fontSize: '1rem'}}>View Reel ↗</button></td>
                         <td>
                           <span style={{
