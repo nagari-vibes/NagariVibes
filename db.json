@@ -45,27 +45,7 @@
     "siteName": "Nagari Vibes",
     "contactEmail": "hello@nagarivibes.com"
   },
-  "competitionEntries": [
-    {
-      "id": "1778181987904",
-      "createdAt": "2026-05-07T19:26:27.904Z",
-      "name": "Tejas Adgatla",
-      "handle": "jeiigopi",
-      "email": "hgwoiregwrugnwugbq@uwoihfe.doifiwf",
-      "videoUrl": "https://res.cloudinary.com/dwt9q2xsq/video/upload/v1778181986/ger2smotav4altrw3rdj.mkv",
-      "status": "approved"
-    },
-    {
-      "id": "1778827403315",
-      "createdAt": "2026-05-15T06:43:23.315Z",
-      "name": "woifeho",
-      "handle": "ioewifjwi",
-      "email": "ojfewnwoi@nsoiufse.wnsieufh",
-      "phone": "neorigphubre",
-      "videoUrl": "https://res.cloudinary.com/dwt9q2xsq/video/upload/v1778827401/xvn3q9nxe1rnidt9sq1n.mkv",
-      "status": "denied"
-    }
-  ],
+  "competitionEntries": [],
   "leads": [
     {
       "id": "1778828179157",
