@@ -125,12 +125,12 @@ export default function ReelsCompetition() {
       
       <div className={styles.hero}>
         <div className="container">
-          <h1 className={styles.title}>NAGARI VIBES <span className={styles.accent}>REELS CLASH</span></h1>
+          <h1 className={styles.title}>Show Your <span className={styles.accent}>Ahilyanagar Vibes</span> <br /> To The World 🌍🔥</h1>
           <p className={styles.subtitle}>
-            {step === 'info' && "Tell us who you are. Step 1 of 3."}
-            {step === 'payment' && "Complete payment to unlock upload. Step 2 of 3."}
-            {step === 'upload' && "Drop your hardest hitting reel. Step 3 of 3."}
-            {step === 'success' && "Submission Secured."}
+            {step === 'info' && "Step 1: Enter your creator details to begin."}
+            {step === 'payment' && "Step 2: Complete the ₹499 entry fee payment."}
+            {step === 'upload' && "Step 3: Upload your hardest hitting reel."}
+            {step === 'success' && "Submission Secured. Good luck!"}
           </p>
         </div>
       </div>
@@ -203,10 +203,6 @@ export default function ReelsCompetition() {
               <div className={styles.rule}><span>9.</span> Collaborations/Teams are allowed.</div>
               <div className={styles.rule}><span>10.</span> Deadlines are strictly enforced.</div>
             </div>
-          </div>
-
-          <div className={styles.finalCta}>
-            "Show Your Ahilyanagar Vibes To The World 🌍🔥"
           </div>
         </div>
       </div>
