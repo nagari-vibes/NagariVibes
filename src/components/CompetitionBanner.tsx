@@ -38,6 +38,12 @@ export default function CompetitionBanner() {
                 <div className={styles.prizeItem}>🥉 ₹5k</div>
               </div>
             </div>
+          <div className={styles.visual}>
+            <img 
+              src="/competition-highlight.png" 
+              alt="Competition Highlight" 
+              className={styles.highlightImg} 
+            />
           </div>
         </motion.div>
       </div>
