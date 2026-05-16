@@ -24,7 +24,7 @@ export default function CompetitionPromo() {
             <h2 className={styles.title}>
               NAGARI VIBES <br />
               <span className={styles.accent}>REELS CLASH</span>
-            </div>
+            </h2>
             <p className={styles.description}>
               Showcase your creativity and win up to <strong>₹10,000</strong>. Join Ahilyanagar's biggest reel competition today.
             </p>
