@@ -134,7 +134,7 @@ export default function ReelsCompetition() {
           <div className={styles.splitGrid}>
             <div className={styles.promoImageWrapper}>
               <img 
-                src="/dedicated-poster.jpeg" 
+                src="/IMG_1670.PNG" 
                 alt="Nagari Vibes Reels Competition" 
                 className={styles.promoImage} 
               />

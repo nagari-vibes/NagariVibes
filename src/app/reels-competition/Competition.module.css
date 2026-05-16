@@ -125,6 +125,13 @@
     width: 100%;
     height: 100%;
     object-fit: contain;
+    animation: floatImage 6s ease-in-out infinite;
+    filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.2));
+  }
+
+  @keyframes floatImage {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
   }
 
   .contentSide {
