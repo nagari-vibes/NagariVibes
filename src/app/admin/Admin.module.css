@@ -425,3 +425,61 @@
   background: #ff4444;
   color: #fff;
 }
+
+.settingsSection {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.settingCard {
+  background: var(--secondary);
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+  border: 1px solid var(--glass-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.settingCard:hover {
+  border-color: var(--primary);
+  background: rgba(212, 175, 55, 0.05);
+}
+
+.settingInfo h3 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+
+.settingInfo p {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.toggleOn {
+  background: var(--primary);
+  color: var(--background);
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 20px;
+  font-weight: 800;
+  cursor: pointer;
+  letter-spacing: 1px;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+.toggleOff {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--muted);
+  border: 1px solid var(--glass-border);
+  padding: 0.6rem 1.5rem;
+  border-radius: 20px;
+  font-weight: 800;
+  cursor: pointer;
+  letter-spacing: 1px;
+}

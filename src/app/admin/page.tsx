@@ -26,10 +26,11 @@ interface CompetitionEntry {
 }
 
 export default function AdminDashboard() {
-  const [activeTab, setActiveTab] = useState<'projects' | 'entries' | 'leads'>('projects');
+  const [activeTab, setActiveTab] = useState<'projects' | 'entries' | 'leads' | 'settings'>('projects');
   const [entries, setEntries] = useState<CompetitionEntry[]>([]);
   const [projects, setProjects] = useState<Project[]>([]);
   const [leads, setLeads] = useState<any[]>([]);
+  const [settings, setSettings] = useState<any>({ competitionEnabled: true });
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -68,6 +69,10 @@ export default function AdminDashboard() {
       fetch('/api/leads')
         .then(res => res.json())
         .then(data => setLeads(data));
+
+      fetch('/api/settings')
+        .then(res => res.json())
+        .then(data => setSettings(data));
     }
   }, [isLoggedIn]);
 
@@ -94,6 +99,20 @@ export default function AdminDashboard() {
       }
     } catch (err) {
       console.error('Failed to update status', err);
+    }
+  };
+
+  const toggleCompetition = async () => {
+    const newValue = !settings.competitionEnabled;
+    try {
+      await fetch('/api/settings', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ competitionEnabled: newValue })
+      });
+      setSettings({ ...settings, competitionEnabled: newValue });
+    } catch (err) {
+      console.error('Failed to update settings', err);
     }
   };
 
@@ -162,10 +181,28 @@ export default function AdminDashboard() {
           <div className={styles.headerLeft}>
             <h1 className="mono">Control Center</h1>
             <div className={styles.tabs}>
-              <button className={`${styles.tabBtn} ${activeTab === 'projects' ? styles.activeTab : ''}`} onClick={() => setActiveTab('projects')}>Projects</button>
-              <button className={`${styles.tabBtn} ${activeTab === 'entries' ? styles.activeTab : ''}`} onClick={() => setActiveTab('entries')}>Reels Entries</button>
-              <button className={`${styles.tabBtn} ${activeTab === 'leads' ? styles.activeTab : ''}`} onClick={() => setActiveTab('leads')}>Contact Leads</button>
+              <button className={activeTab === 'projects' ? styles.activeTab : ''} onClick={() => setActiveTab('projects')}>Projects</button>
+              <button className={activeTab === 'entries' ? styles.activeTab : ''} onClick={() => setActiveTab('entries')}>Reels Competition</button>
+              <button className={activeTab === 'leads' ? styles.activeTab : ''} onClick={() => setActiveTab('leads')}>Contact Leads</button>
+              <button className={activeTab === 'settings' ? styles.activeTab : ''} onClick={() => setActiveTab('settings')}>Settings</button>
             </div>
+
+            {activeTab === 'settings' && (
+              <div className={styles.settingsSection}>
+                <div className={styles.settingCard}>
+                  <div className={styles.settingInfo}>
+                    <h3>Reels Competition Promo</h3>
+                    <p>Show/Hide the competition banner on the main homepage.</p>
+                  </div>
+                  <button 
+                    className={settings.competitionEnabled ? styles.toggleOn : styles.toggleOff}
+                    onClick={toggleCompetition}
+                  >
+                    {settings.competitionEnabled ? 'ENABLED' : 'DISABLED'}
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
           <button className={styles.logoutBtn} onClick={() => setIsLoggedIn(false)}>
             <LogOut size={18} /> Logout

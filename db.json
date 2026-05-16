@@ -43,7 +43,8 @@
   ],
   "settings": {
     "siteName": "Nagari Vibes",
-    "contactEmail": "hello@nagarivibes.com"
+    "contactEmail": "hello@nagarivibes.com",
+    "competitionEnabled": true
   },
   "competitionEntries": [],
   "leads": [
