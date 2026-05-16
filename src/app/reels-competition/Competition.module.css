@@ -404,3 +404,166 @@
   from { opacity: 0; transform: scale(0.9) translateY(20px); }
   to { opacity: 1; transform: scale(1) translateY(0); }
 }
+
+.contestOverview {
+  padding: 4rem 0;
+  background: rgba(255, 255, 255, 0.02);
+  border-top: 1px solid var(--glass-border);
+  border-bottom: 1px solid var(--glass-border);
+  margin-bottom: 4rem;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.infoCard {
+  background: #0a0a0a;
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid var(--glass-border);
+  transition: transform 0.3s ease;
+}
+
+.infoCard:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+}
+
+.cardIcon {
+  width: 24px;
+  height: 24px;
+}
+
+.cardHeader h3 {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.topicList, .tipsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.topicList li, .tipsList li {
+  color: #ccc;
+  margin-bottom: 0.8rem;
+  padding-left: 1.5rem;
+  position: relative;
+  font-size: 0.95rem;
+}
+
+.topicList li::before, .tipsList li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+}
+
+.prizes {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.prizeItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(212, 175, 55, 0.05);
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.rank {
+  font-weight: bold;
+  color: #fff;
+}
+
+.amount {
+  font-family: var(--font-heading);
+  color: var(--primary);
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+
+.rulesSection {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 3rem;
+  border-radius: 20px;
+  border: 1px solid var(--glass-border);
+}
+
+.rulesHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+  color: var(--primary);
+}
+
+.rulesHeader h2 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  letter-spacing: 3px;
+  margin: 0;
+}
+
+.rulesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.rule {
+  color: #aaa;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.rule span {
+  color: var(--primary);
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.finalCta {
+  margin-top: 4rem;
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 0 0 30px var(--primary-glow);
+  padding: 0 1rem;
+}
+
+@media (max-width: 768px) {
+  .finalCta {
+    font-size: 1.2rem;
+  }
+  
+  .rulesSection {
+    padding: 1.5rem;
+  }
+  
+  .contestOverview {
+    padding: 2rem 0;
+  }
+}

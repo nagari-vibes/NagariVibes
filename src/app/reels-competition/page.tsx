@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Upload, CheckCircle, AlertCircle, Video, ArrowRight, CreditCard, QrCode } from 'lucide-react';
+import { Upload, CheckCircle, AlertCircle, Video, ArrowRight, CreditCard, QrCode, Trophy, Target, ScrollText, Sparkles } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import styles from './Competition.module.css';
@@ -132,6 +132,82 @@ export default function ReelsCompetition() {
             {step === 'upload' && "Drop your hardest hitting reel. Step 3 of 3."}
             {step === 'success' && "Submission Secured."}
           </p>
+        </div>
+      </div>
+
+      <div className={styles.contestOverview}>
+        <div className="container">
+          <div className={styles.infoGrid}>
+            <div className={styles.infoCard}>
+              <div className={styles.cardHeader}>
+                <Target className={styles.cardIcon} />
+                <h3>TOPICS</h3>
+              </div>
+              <ul className={styles.topicList}>
+                <li>Hidden Places of Ahilyanagar</li>
+                <li>Foods of Ahilyanagar</li>
+                <li>Culture of Ahilyanagar</li>
+                <li>Vibes of Ahilyanagar</li>
+              </ul>
+            </div>
+
+            <div className={styles.infoCard}>
+              <div className={styles.cardHeader}>
+                <Trophy className={styles.cardIcon} />
+                <h3>PRIZE POOL</h3>
+              </div>
+              <div className={styles.prizes}>
+                <div className={styles.prizeItem}>
+                  <span className={styles.rank}>🥇 1st</span>
+                  <span className={styles.amount}>₹10,000</span>
+                </div>
+                <div className={styles.prizeItem}>
+                  <span className={styles.rank}>🥈 2nd</span>
+                  <span className={styles.amount}>₹7,000</span>
+                </div>
+                <div className={styles.prizeItem}>
+                  <span className={styles.rank}>🥉 3rd</span>
+                  <span className={styles.amount}>₹5,000</span>
+                </div>
+              </div>
+            </div>
+
+            <div className={styles.infoCard}>
+              <div className={styles.cardHeader}>
+                <Sparkles className={styles.cardIcon} />
+                <h3>BONUS TIPS</h3>
+              </div>
+              <ul className={styles.tipsList}>
+                <li>Cinematic shots & Drone clips</li>
+                <li>Emotional storytelling</li>
+                <li>Local vibe + culture</li>
+                <li>Trending transitions & music</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className={styles.rulesSection}>
+            <div className={styles.rulesHeader}>
+              <ScrollText />
+              <h2>CONTEST RULES</h2>
+            </div>
+            <div className={styles.rulesGrid}>
+              <div className={styles.rule}><span>1.</span> Reel फक्त Ahilyanagar related असावी.</div>
+              <div className={styles.rule}><span>2.</span> Duration: 30 sec – 90 sec.</div>
+              <div className={styles.rule}><span>3.</span> Quality: Minimum 1080p HD.</div>
+              <div className={styles.rule}><span>4.</span> Original content mandatory.</div>
+              <div className={styles.rule}><span>5.</span> No abusive / vulgar content.</div>
+              <div className={styles.rule}><span>6.</span> Upload on your own Instagram.</div>
+              <div className={styles.rule}><span>7.</span> #NagariVibes #AhilyanagarVibes compulsory.</div>
+              <div className={styles.rule}><span>8.</span> Iconic places (Fort, Mahal) = Extra Preference.</div>
+              <div className={styles.rule}><span>9.</span> Collaborations/Teams are allowed.</div>
+              <div className={styles.rule}><span>10.</span> Deadlines are strictly enforced.</div>
+            </div>
+          </div>
+
+          <div className={styles.finalCta}>
+            "Show Your Ahilyanagar Vibes To The World 🌍🔥"
+          </div>
         </div>
       </div>
 
