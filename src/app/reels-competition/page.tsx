@@ -129,6 +129,14 @@ export default function ReelsCompetition() {
         </div>
       </div>
 
+      <div className={styles.promoImageWrapper}>
+        <img 
+          src="/reels-competition.jpeg" 
+          alt="Nagari Vibes Reels Competition" 
+          className={styles.promoImage} 
+        />
+      </div>
+
       <div className={styles.contestOverview}>
         <div className="container">
           <div className={styles.infoGrid}>
@@ -202,14 +210,6 @@ export default function ReelsCompetition() {
       </div>
 
       <div className={styles.splitLayout}>
-        <div className={styles.promoImageWrapper}>
-          <img 
-            src="/reels-competition.jpeg" 
-            alt="Nagari Vibes Reels Competition" 
-            className={styles.promoImage} 
-          />
-        </div>
-
         <div className={styles.contentSide}>
           <div className={styles.formContainer}>
             {step === 'info' && (

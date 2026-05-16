@@ -28,7 +28,8 @@
 
 .promoImageWrapper {
   width: 90%;
-  margin: 0 auto 2rem;
+  max-width: 1200px;
+  margin: 0 auto 4rem;
   background: #000;
   display: flex;
   justify-content: center;
@@ -64,19 +65,14 @@
   }
 
   .splitLayout {
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 3rem;
-    padding: 0 4rem 4rem;
-    max-width: 1400px;
+    padding: 0 2rem 8rem;
+    max-width: 800px;
     margin: 0 auto;
   }
 
   .promoImageWrapper {
-    width: 45%;
-    position: sticky;
-    top: 120px;
-    margin: 0;
+    width: 100%;
+    margin-bottom: 6rem;
   }
 
   .promoImage {
