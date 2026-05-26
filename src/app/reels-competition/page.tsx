@@ -30,7 +30,6 @@ export default function ReelsCompetition() {
   const handleInfoSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setStep('upload');
-    window.scrollTo(0, 0);
   };
 
   const finalSubmit = async (e: React.FormEvent) => {
