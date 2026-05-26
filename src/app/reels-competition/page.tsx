@@ -1,14 +1,14 @@
 'use client';
 
 import { useState } from 'react';
-import { Upload, CheckCircle, AlertCircle, Video, ArrowRight, CreditCard, QrCode, Trophy, Target, ScrollText, Sparkles } from 'lucide-react';
+import { Upload, CheckCircle, AlertCircle, Video, ArrowRight, Trophy, Target, ScrollText, Sparkles } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import styles from './Competition.module.css';
 
 export default function ReelsCompetition() {
-  const [step, setStep] = useState<'info' | 'payment' | 'upload' | 'success'>('info');
-  const [formData, setFormData] = useState({ name: '', handle: '', email: '', phone: '', utr: '' });
+  const [step, setStep] = useState<'info' | 'upload' | 'success'>('info');
+  const [formData, setFormData] = useState({ name: '', handle: '', email: '', phone: '' });
   const [file, setFile] = useState<File | null>(null);
   const [isUploading, setIsUploading] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -29,17 +29,6 @@ export default function ReelsCompetition() {
 
   const handleInfoSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setStep('payment');
-    window.scrollTo(0, 0);
-  };
-
-  const handlePaymentSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (formData.utr.length !== 12 || !/^\d+$/.test(formData.utr)) {
-      setError('Please enter a valid 12-digit UTR number.');
-      return;
-    }
-    setError('');
     setStep('upload');
     window.scrollTo(0, 0);
   };
@@ -105,8 +94,7 @@ export default function ReelsCompetition() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           ...formData,
-          videoUrl,
-          status: 'pending'
+          videoUrl
         })
       });
 
@@ -238,46 +226,16 @@ export default function ReelsCompetition() {
                   <input required type="tel" placeholder="+91 9876543210" value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})} />
                 </div>
                 <button type="submit" className={styles.submitBtn}>
-                  PROCEED TO PAYMENT <ArrowRight size={20} />
+                  PROCEED TO UPLOAD <ArrowRight size={20} />
                 </button>
               </form>
             )}
 
-            {step === 'payment' && (
-              <div className={styles.form}>
-                <div className={styles.stepIndicator}>STEP 2: PAYMENT & VERIFICATION</div>
-                <div className={styles.paymentBox}>
-                  <p>Entry Fee: <strong>₹499</strong></p>
-                  <div className={styles.qrWrapper}>
-                    <img src={`https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent('upi://pay?pa=8421495454-3@ybl&pn=Nagari Vibes&am=499&cu=INR')}&size=200x200`} alt="QR" />
-                  </div>
-                  <p className={styles.hintText}>Scan with GPay, PhonePe, or Paytm</p>
-                </div>
 
-                <form onSubmit={handlePaymentSubmit}>
-                  <div className={styles.inputGroup}>
-                    <label>Enter 12-Digit UTR / Transaction ID</label>
-                    <input 
-                      required 
-                      type="text" 
-                      placeholder="e.g. 412345678901" 
-                      maxLength={12}
-                      value={formData.utr} 
-                      onChange={e => setFormData({...formData, utr: e.target.value})} 
-                    />
-                  </div>
-                  {error && <div className={styles.errorBox}><AlertCircle size={18} /> {error}</div>}
-                  <button type="submit" className={styles.submitBtn}>
-                    CONFIRM PAYMENT <CreditCard size={20} />
-                  </button>
-                  <button type="button" className={styles.backBtn} onClick={() => setStep('info')}>Back to Details</button>
-                </form>
-              </div>
-            )}
 
             {step === 'upload' && (
               <form className={styles.form} onSubmit={finalSubmit}>
-                <div className={styles.stepIndicator}>STEP 3: UPLOAD REEL</div>
+                <div className={styles.stepIndicator}>STEP 2: UPLOAD REEL</div>
                 <div className={styles.uploadGroup}>
                   <label>Reel Video File (Max 100MB)</label>
                   <div className={`${styles.dropzone} ${file ? styles.hasFile : ''}`}>
@@ -317,7 +275,7 @@ export default function ReelsCompetition() {
               <div className={styles.successState}>
                 <CheckCircle size={64} className={styles.successIcon} />
                 <h2>SUBMISSION SECURED</h2>
-                <p>Your reel and payment details (UTR: {formData.utr}) have been received. We will verify your payment and contact you shortly.</p>
+                <p>Your reel has been successfully received. We will review your entry and contact you shortly.</p>
                 <button className={styles.btn} onClick={() => window.location.reload()}>SUBMIT ANOTHER ENTRY</button>
               </div>
             )}
