@@ -8,7 +8,7 @@ import styles from './Competition.module.css';
 
 export default function ReelsCompetition() {
   const [step, setStep] = useState<'info' | 'upload' | 'success'>('info');
-  const [formData, setFormData] = useState({ name: '', handle: '', email: '', phone: '', topic: '' });
+  const [formData, setFormData] = useState({ name: '', handle: '', email: '', phone: '', topic: '', reelLink: '' });
   const [file, setFile] = useState<File | null>(null);
   const [isUploading, setIsUploading] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -233,6 +233,10 @@ export default function ReelsCompetition() {
                     <option value="Ahilyanagar Through People’s Eyes">Ahilyanagar Through People’s Eyes</option>
                     <option value="The Future of Ahilyanagar">The Future of Ahilyanagar</option>
                   </select>
+                </div>
+                <div className={styles.inputGroup}>
+                  <label>Instagram Reel Link</label>
+                  <input required type="url" placeholder="https://www.instagram.com/reel/..." value={formData.reelLink} onChange={e => setFormData({...formData, reelLink: e.target.value})} />
                 </div>
                 <button type="submit" className={styles.submitBtn}>
                   PROCEED TO UPLOAD <ArrowRight size={20} />

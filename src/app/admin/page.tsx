@@ -20,6 +20,7 @@ interface CompetitionEntry {
   email: string;
   phone?: string;
   topic?: string;
+  reelLink?: string;
   videoUrl: string;
   createdAt: string;
 }
@@ -224,13 +225,14 @@ export default function AdminDashboard() {
                     <th>Topic</th>
                     <th>Email / Phone</th>
                     <th>Video File</th>
+                    <th>Instagram Link</th>
                     <th>Actions</th>
                   </tr>
                 </thead>
                 <tbody>
                   {entries.length === 0 ? (
                     <tr>
-                      <td colSpan={8} style={{ textAlign: 'center', padding: '2rem' }}>No entries found.</td>
+                      <td colSpan={9} style={{ textAlign: 'center', padding: '2rem' }}>No entries found.</td>
                     </tr>
                   ) : (
                     entries.map(entry => (
@@ -245,6 +247,13 @@ export default function AdminDashboard() {
                           {entry.phone && <span className="mono" style={{fontSize: '0.8rem', color: '#aaa'}}>{entry.phone}</span>}
                         </td>
                         <td><button onClick={() => setViewingVideo(entry.videoUrl)} className={styles.tableLink} style={{background: 'none', border: 'none', cursor: 'pointer', fontFamily: 'inherit', fontSize: '1rem'}}>View Reel ↗</button></td>
+                        <td>
+                          {entry.reelLink ? (
+                            <a href={entry.reelLink} target="_blank" rel="noreferrer" className={styles.tableLink}>Open Reel ↗</a>
+                          ) : (
+                            <span style={{color: '#666'}}>N/A</span>
+                          )}
+                        </td>
                         <td>
                           <button 
                             onClick={async () => {
