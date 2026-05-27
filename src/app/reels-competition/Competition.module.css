@@ -181,6 +181,27 @@
   border-color: var(--primary);
 }
 
+.selectInput {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--glass-border);
+  padding: 1rem;
+  border-radius: 4px;
+  color: var(--foreground);
+  font-family: var(--font-inter), sans-serif;
+  transition: border-color 0.3s ease;
+  cursor: pointer;
+}
+
+.selectInput:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.selectInput option {
+  background: #0a0a0a;
+  color: var(--foreground);
+}
+
 .uploadGroup {
   margin-top: 1rem;
 }

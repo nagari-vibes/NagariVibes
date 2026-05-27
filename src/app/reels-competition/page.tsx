@@ -8,7 +8,7 @@ import styles from './Competition.module.css';
 
 export default function ReelsCompetition() {
   const [step, setStep] = useState<'info' | 'upload' | 'success'>('info');
-  const [formData, setFormData] = useState({ name: '', handle: '', email: '', phone: '' });
+  const [formData, setFormData] = useState({ name: '', handle: '', email: '', phone: '', topic: '' });
   const [file, setFile] = useState<File | null>(null);
   const [isUploading, setIsUploading] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -135,10 +135,10 @@ export default function ReelsCompetition() {
                     <h3>TOPICS</h3>
                   </div>
                   <ul className={styles.topicList}>
-                    <li>Hidden Places of Ahilyanagar</li>
-                    <li>Foods of Ahilyanagar</li>
-                    <li>Culture of Ahilyanagar</li>
                     <li>Vibes of Ahilyanagar</li>
+                    <li>Hidden Places of Ahilyanagar</li>
+                    <li>Ahilyanagar Through People’s Eyes</li>
+                    <li>The Future of Ahilyanagar</li>
                   </ul>
                 </div>
 
@@ -223,6 +223,16 @@ export default function ReelsCompetition() {
                 <div className={styles.inputGroup}>
                   <label>Phone Number</label>
                   <input required type="tel" placeholder="+91 9876543210" value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})} />
+                </div>
+                <div className={styles.inputGroup}>
+                  <label>Select Reel Topic</label>
+                  <select required value={formData.topic} onChange={e => setFormData({...formData, topic: e.target.value})} className={styles.selectInput}>
+                    <option value="" disabled>Select a topic</option>
+                    <option value="Vibes of Ahilyanagar">Vibes of Ahilyanagar</option>
+                    <option value="Hidden Places of Ahilyanagar">Hidden Places of Ahilyanagar</option>
+                    <option value="Ahilyanagar Through People’s Eyes">Ahilyanagar Through People’s Eyes</option>
+                    <option value="The Future of Ahilyanagar">The Future of Ahilyanagar</option>
+                  </select>
                 </div>
                 <button type="submit" className={styles.submitBtn}>
                   PROCEED TO UPLOAD <ArrowRight size={20} />

@@ -19,6 +19,7 @@ interface CompetitionEntry {
   handle: string;
   email: string;
   phone?: string;
+  topic?: string;
   videoUrl: string;
   createdAt: string;
 }
@@ -220,6 +221,7 @@ export default function AdminDashboard() {
                     <th>Date</th>
                     <th>Creator Name</th>
                     <th>IG Handle</th>
+                    <th>Topic</th>
                     <th>Email / Phone</th>
                     <th>Video File</th>
                     <th>Actions</th>
@@ -228,7 +230,7 @@ export default function AdminDashboard() {
                 <tbody>
                   {entries.length === 0 ? (
                     <tr>
-                      <td colSpan={7} style={{ textAlign: 'center', padding: '2rem' }}>No entries found.</td>
+                      <td colSpan={8} style={{ textAlign: 'center', padding: '2rem' }}>No entries found.</td>
                     </tr>
                   ) : (
                     entries.map(entry => (
@@ -237,6 +239,7 @@ export default function AdminDashboard() {
                         <td>{new Date(entry.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })}</td>
                         <td><strong>{entry.name}</strong></td>
                         <td><a href={`https://instagram.com/${entry.handle.replace('@', '')}`} target="_blank" rel="noreferrer" className={styles.tableLink}>{entry.handle}</a></td>
+                        <td style={{ color: 'var(--primary)', fontWeight: 'bold' }}>{entry.topic || 'N/A'}</td>
                         <td>
                           <a href={`mailto:${entry.email}`} className={styles.tableLink} style={{display: 'block'}}>{entry.email}</a>
                           {entry.phone && <span className="mono" style={{fontSize: '0.8rem', color: '#aaa'}}>{entry.phone}</span>}
